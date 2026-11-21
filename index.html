@@ -2,7 +2,7 @@
 <html lang="es" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>SushiChin | Comida Japonesa & Sushi - Villa Las Bandurrias & Conchalí</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -36,8 +36,8 @@
       background-color: #0B0B0B;
       color: #FFFFFF;
       font-family: 'Inter', sans-serif;
+      -webkit-tap-highlight-color: transparent;
     }
-    /* Scrollbar elegante oscuro */
     ::-webkit-scrollbar {
       width: 8px;
       height: 8px;
@@ -66,20 +66,23 @@
     .btn-pulse {
       animation: pulse-border 2.2s infinite;
     }
+    .safe-bottom {
+      padding-bottom: max(1rem, env(safe-area-inset-bottom));
+    }
   </style>
 </head>
-<body class="bg-brand-black text-white antialiased selection:bg-brand-red selection:text-white">
+<body class="bg-brand-black text-white antialiased selection:bg-brand-red selection:text-white pb-24 md:pb-0">
 
   <!-- ==================== NOTIFICACIONES TOAST ==================== -->
-  <div id="toast-container" class="fixed top-20 right-4 z-50 flex flex-col gap-2 pointer-events-none max-w-xs w-full"></div>
+  <div id="toast-container" class="fixed top-20 inset-x-4 sm:inset-x-auto sm:right-4 z-[60] flex flex-col gap-2 pointer-events-none sm:max-w-xs w-auto sm:w-full"></div>
 
   <!-- ==================== NAVBAR SUPERIOR ==================== -->
   <header class="sticky top-0 z-40 bg-brand-black/95 backdrop-blur-md border-b border-brand-border">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-3">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-3">
       
       <!-- Logo SVG Fiel a SUSHICHIN -->
-      <a href="#inicio" class="flex items-center gap-3 group focus:outline-none" aria-label="Inicio SushiChin">
-        <div class="w-40 sm:w-48 transition-transform duration-300 group-hover:scale-105">
+      <a href="#inicio" class="flex items-center gap-2 sm:gap-3 group focus:outline-none shrink-0" aria-label="Inicio SushiChin">
+        <div class="w-32 sm:w-48 transition-transform duration-300 group-hover:scale-105">
           <svg viewBox="0 0 420 155" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
             <g>
               <path d="M 88 74 A 62 62 0 0 1 205 46 L 205 74 Z" fill="#E51A1A" stroke="#E51A1A" stroke-width="5"/>
@@ -120,9 +123,10 @@
       <!-- Acciones Derecha: Admin Rápido + Carrito -->
       <div class="flex items-center gap-2 sm:gap-3">
         <button
+          type="button"
           onclick="openAdminAuth()"
           title="Panel Administrador de Stock y Pedidos"
-          class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-brand-card border border-brand-border hover:border-brand-red/70 text-xs sm:text-sm font-semibold text-zinc-300 hover:text-white transition-all"
+          class="flex items-center gap-1.5 px-2.5 sm:px-3 py-2 rounded-xl bg-brand-card border border-brand-border hover:border-brand-red/70 text-xs sm:text-sm font-semibold text-zinc-300 hover:text-white transition-all min-h-[40px]"
         >
           <svg class="w-4 h-4 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
@@ -132,13 +136,14 @@
         </button>
 
         <button
+          type="button"
           onclick="toggleCart(true)"
-          class="relative flex items-center gap-2 bg-brand-red hover:bg-brand-redDark text-white px-4 py-2.5 rounded-xl font-bold text-sm transition-all shadow-lg shadow-brand-red/20 active:scale-95"
+          class="relative flex items-center gap-2 bg-brand-red hover:bg-brand-redDark text-white px-3.5 sm:px-4 py-2 rounded-xl font-bold text-xs sm:text-sm transition-all shadow-lg shadow-brand-red/20 active:scale-95 min-h-[40px]"
         >
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
           </svg>
-          <span class="hidden xs:inline">Mi Pedido</span>
+          <span class="hidden sm:inline">Mi Pedido</span>
           <span id="cart-badge" class="bg-white text-brand-black text-xs font-black px-2 py-0.5 rounded-full">0</span>
         </button>
       </div>
@@ -152,11 +157,11 @@
       <div class="absolute bottom-0 right-0 w-96 h-96 bg-brand-red/10 rounded-full blur-3xl"></div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
-        <div class="lg:col-span-7 space-y-6">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-red/15 border border-brand-red/40 text-brand-red text-xs sm:text-sm font-bold tracking-wide uppercase">
+        <div class="lg:col-span-7 space-y-5 sm:space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-red/15 border border-brand-red/40 text-brand-red text-[11px] sm:text-sm font-bold tracking-wide uppercase">
             <span class="w-2 h-2 rounded-full bg-brand-red animate-ping"></span>
             Villa Las Bandurrias • Despacho a Conchalí
           </div>
@@ -165,14 +170,14 @@
             El verdadero sabor de <span class="text-brand-red">SushiChin</span> directo a tu mesa
           </h1>
 
-          <div class="bg-brand-card border-l-4 border-brand-red rounded-2xl p-6 sm:p-7 shadow-2xl space-y-3.5">
-            <h2 class="font-display font-extrabold text-lg sm:text-xl text-white tracking-tight">
+          <div class="bg-brand-card border-l-4 border-brand-red rounded-2xl p-5 sm:p-7 shadow-2xl space-y-3">
+            <h2 class="font-display font-extrabold text-base sm:text-xl text-white tracking-tight">
               El mejor sushi fresco, preparado al momento para ti.
             </h2>
             <p class="text-sm sm:text-base text-zinc-300 leading-relaxed">
-              En <strong class="text-white font-semibold">SushiChin</strong> elaboramos cada roll con ingredientes frescos, seleccionados y todo el sabor de nuestra cocina. Descubre nuestra variedad de rolls preparados al instante para disfrutar en casa.
+              En <strong class="text-white font-semibold">SushiChin</strong> elaboramos cada roll con ingredientes frescos, seleccionados y todo el sabor de nuestra cocina. Cambia rolls en tus tablas, elige tus salsas y disfruta en casa.
             </p>
-            <div class="pt-1 border-t border-zinc-800/80 flex items-start gap-2.5 text-sm text-zinc-200">
+            <div class="pt-1 border-t border-zinc-800/80 flex items-start gap-2.5 text-xs sm:text-sm text-zinc-200">
               <span class="text-brand-red mt-0.5 shrink-0">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -185,10 +190,10 @@
             </div>
           </div>
 
-          <div class="flex flex-wrap items-center gap-3 sm:gap-4 pt-2">
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-1">
             <a
               href="#carta"
-              class="btn-pulse flex-1 sm:flex-none text-center bg-brand-red hover:bg-brand-redDark text-white font-extrabold px-7 py-4 rounded-2xl text-base transition-all shadow-xl shadow-brand-red/30 flex items-center justify-center gap-2"
+              class="btn-pulse text-center bg-brand-red hover:bg-brand-redDark text-white font-extrabold px-6 py-3.5 sm:py-4 rounded-2xl text-sm sm:text-base transition-all shadow-xl shadow-brand-red/30 flex items-center justify-center gap-2 min-h-[48px]"
             >
               <span>Ver Carta y Pedir</span>
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -200,19 +205,19 @@
               href="https://wa.me/56932291414?text=Hola%20SushiChin!%20Quisiera%20hacer%20un%20pedido%20o%20consultar%20por%20despachos%20%F0%9F%8D%A3"
               target="_blank"
               rel="noopener noreferrer"
-              class="flex-1 sm:flex-none text-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-4 rounded-2xl text-base transition-all flex items-center justify-center gap-2 shadow-lg shadow-emerald-950/40"
+              class="text-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-3.5 sm:py-4 rounded-2xl text-sm sm:text-base transition-all flex items-center justify-center gap-2 shadow-lg shadow-emerald-950/40 min-h-[48px]"
             >
               <span>Pedir por WhatsApp</span>
             </a>
           </div>
 
-          <div class="flex flex-wrap items-center gap-4 pt-2 text-sm text-zinc-400">
+          <div class="flex flex-wrap items-center gap-2.5 sm:gap-4 pt-1 text-xs sm:text-sm text-zinc-400">
             <span class="font-semibold text-zinc-300">Síguenos:</span>
             <a
               href="https://www.instagram.com/sushichin_cl"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-brand-card border border-brand-border hover:border-pink-500/60 hover:text-white transition-all"
+              class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-brand-card border border-brand-border hover:border-pink-500/60 hover:text-white transition-all"
             >
               <svg class="w-4 h-4 text-pink-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
               <span>@sushichin_cl</span>
@@ -222,7 +227,7 @@
               href="https://www.facebook.com/sushichin.cl"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-brand-card border border-brand-border hover:border-blue-500/60 hover:text-white transition-all"
+              class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-brand-card border border-brand-border hover:border-blue-500/60 hover:text-white transition-all"
             >
               <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
               <span>sushichin.cl</span>
@@ -230,7 +235,7 @@
 
             <a
               href="tel:+56932291414"
-              class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-brand-card border border-brand-border hover:border-brand-red/60 hover:text-white transition-all"
+              class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-brand-card border border-brand-border hover:border-brand-red/60 hover:text-white transition-all"
             >
               <svg class="w-4 h-4 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
               <span>+56 9 3229 1414</span>
@@ -240,10 +245,10 @@
 
         <!-- Columna Derecha: Flyer / Propaganda Digital Oficial del Local -->
         <div id="propaganda" class="lg:col-span-5">
-          <div class="relative rounded-3xl overflow-hidden border-2 border-brand-red/60 bg-gradient-to-b from-zinc-900 via-brand-black to-zinc-950 shadow-2xl shadow-brand-red/20 p-5 sm:p-6">
-            <div class="flex items-center justify-between border-b border-zinc-800 pb-4 mb-4">
+          <div class="relative rounded-3xl overflow-hidden border-2 border-brand-red/60 bg-gradient-to-b from-zinc-900 via-brand-black to-zinc-950 shadow-2xl shadow-brand-red/20 p-4 sm:p-6">
+            <div class="flex items-center justify-between border-b border-zinc-800 pb-3 mb-4">
               <div class="flex items-center gap-2">
-                <span class="bg-brand-red text-white text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">Propaganda Oficial</span>
+                <span class="bg-brand-red text-white text-[11px] font-black px-3 py-1 rounded-full uppercase tracking-wider">Propaganda Oficial</span>
               </div>
               <span class="text-xs font-bold text-zinc-400">🥢 Fresco al momento</span>
             </div>
@@ -263,26 +268,26 @@
               </div>
 
               <div class="absolute bottom-3 left-3 right-3">
-                <p class="text-xs font-bold uppercase tracking-widest text-brand-red mb-0.5">SUSHICHIN • COMIDA JAPONESA</p>
-                <h3 class="font-display font-black text-xl sm:text-2xl text-white leading-tight">
+                <p class="text-[11px] font-bold uppercase tracking-widest text-brand-red mb-0.5">SUSHICHIN • COMIDA JAPONESA</p>
+                <h3 class="font-display font-black text-lg sm:text-2xl text-white leading-tight">
                   ¡PIDE TU TABLA O ROLL FAVORITO HOY!
                 </h3>
               </div>
             </div>
 
-            <div class="grid grid-cols-2 gap-3 text-xs sm:text-sm">
+            <div class="grid grid-cols-2 gap-2.5 sm:gap-3 text-xs sm:text-sm">
               <div class="bg-brand-card border border-brand-border rounded-xl p-3 flex items-center gap-2.5">
                 <span class="text-xl">🛵</span>
                 <div>
-                  <p class="font-bold text-white">Delivery Rápido</p>
-                  <p class="text-zinc-400 text-xs">Las Bandurrias y Conchalí</p>
+                  <p class="font-bold text-white text-xs sm:text-sm">Delivery Rápido</p>
+                  <p class="text-zinc-400 text-[11px] sm:text-xs">Las Bandurrias y Conchalí</p>
                 </div>
               </div>
               <div class="bg-brand-card border border-brand-border rounded-xl p-3 flex items-center gap-2.5">
                 <span class="text-xl">🥡</span>
                 <div>
-                  <p class="font-bold text-white">Retiro en Local</p>
-                  <p class="text-zinc-400 text-xs">Villa Las Bandurrias</p>
+                  <p class="font-bold text-white text-xs sm:text-sm">Retiro en Local</p>
+                  <p class="text-zinc-400 text-[11px] sm:text-xs">Villa Las Bandurrias</p>
                 </div>
               </div>
             </div>
@@ -299,77 +304,69 @@
   </section>
 
   <!-- ==================== SECCIÓN CATÁLOGO DE PRODUCTOS ==================== -->
-  <section id="carta" class="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+  <section id="carta" class="py-10 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6 sm:mb-8">
       <div>
         <span class="text-brand-red font-bold text-xs uppercase tracking-widest">Carta Digital en Vivo</span>
         <h2 class="font-display font-black text-2xl sm:text-4xl mt-1">Nuestros Rolls & Promociones</h2>
-        <p class="text-zinc-400 text-sm sm:text-base mt-1">Preparados al instante con salmón fresco, palta hass, cambios de roll en tablas y salsas a elección.</p>
+        <p class="text-zinc-400 text-xs sm:text-base mt-1">Cambia tipos de sushi en tablas con ajuste de precio y elije salsas (incluidas, sin picante, sin lactosa o extras).</p>
       </div>
 
-      <!-- Buscador rápido -->
       <div class="relative w-full md:w-72">
         <input
           type="text"
           id="search-input"
           oninput="renderMenu()"
-          placeholder="Buscar roll, salmón, tempura..."
-          class="w-full bg-brand-card border border-brand-border focus:border-brand-red rounded-xl pl-10 pr-4 py-2.5 text-sm text-white placeholder-zinc-500 focus:outline-none transition-colors"
+          placeholder="Buscar roll, pollo, salmón..."
+          class="w-full bg-brand-card border border-brand-border focus:border-brand-red rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none transition-colors"
         />
-        <svg class="w-4 h-4 text-zinc-500 absolute left-3.5 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-4 h-4 text-zinc-500 absolute left-3.5 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
       </div>
     </div>
 
-    <!-- Barra de Categorías -->
-    <div id="category-tabs" class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-4 mb-6">
-      <!-- Generado por JS -->
-    </div>
-
-    <!-- Grilla de Productos -->
-    <div id="menu-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Generado dinámicamente por JS -->
-    </div>
+    <div id="category-tabs" class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-3 mb-5 sm:mb-6"></div>
+    <div id="menu-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6"></div>
   </section>
 
   <!-- ==================== UBICACIÓN, MAPA Y HORARIOS ==================== -->
-  <section id="ubicacion" class="py-12 sm:py-16 bg-brand-card/50 border-t border-brand-border">
+  <section id="ubicacion" class="py-10 sm:py-16 bg-brand-card/50 border-t border-brand-border">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-10">
+      <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
         <span class="text-brand-red font-bold text-xs uppercase tracking-widest">Encuéntranos Fácil</span>
         <h2 class="font-display font-black text-2xl sm:text-4xl mt-1">Ubicación, Horarios y Despacho</h2>
-        <p class="text-zinc-400 text-sm sm:text-base mt-2">
+        <p class="text-zinc-400 text-xs sm:text-base mt-2">
           Estamos ubicados en <strong class="text-white">Villa Las Bandurrias</strong> y realizamos despachos rápidos a todo <strong class="text-white">Conchalí</strong> y alrededores.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-        <div class="lg:col-span-5 bg-brand-card border border-brand-border rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6">
-          <div class="space-y-6">
-            <div class="flex items-start gap-4">
-              <div class="w-11 h-11 rounded-2xl bg-brand-red/15 border border-brand-red/30 flex items-center justify-center text-brand-red shrink-0">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
+        <div class="lg:col-span-5 bg-brand-card border border-brand-border rounded-3xl p-5 sm:p-8 flex flex-col justify-between space-y-6">
+          <div class="space-y-5 sm:space-y-6">
+            <div class="flex items-start gap-3.5 sm:gap-4">
+              <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-brand-red/15 border border-brand-red/30 flex items-center justify-center text-brand-red shrink-0">
+                <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
               <div>
-                <h3 class="font-bold text-lg text-white">Dirección del Local</h3>
-                <p class="text-zinc-300 text-sm mt-1">Villa Las Bandurrias, Comuna de Conchalí, Región Metropolitana, Chile.</p>
+                <h3 class="font-bold text-base sm:text-lg text-white">Dirección del Local</h3>
+                <p class="text-zinc-300 text-xs sm:text-sm mt-1">Villa Las Bandurrias, Comuna de Conchalí, Región Metropolitana, Chile.</p>
                 <p class="text-xs text-amber-400 mt-1 font-medium">🛵 Zona de reparto: Villa Las Bandurrias, Conchalí y sectores cercanos.</p>
               </div>
             </div>
 
-            <div class="flex items-start gap-4">
-              <div class="w-11 h-11 rounded-2xl bg-brand-red/15 border border-brand-red/30 flex items-center justify-center text-brand-red shrink-0">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="flex items-start gap-3.5 sm:gap-4">
+              <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-brand-red/15 border border-brand-red/30 flex items-center justify-center text-brand-red shrink-0">
+                <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
               <div class="w-full">
-                <h3 class="font-bold text-lg text-white">Horario de Atención</h3>
-                <ul class="mt-2 space-y-2 text-sm">
+                <h3 class="font-bold text-base sm:text-lg text-white">Horario de Atención</h3>
+                <ul class="mt-2 space-y-2 text-xs sm:text-sm">
                   <li class="flex justify-between text-zinc-300 border-b border-zinc-800 pb-1.5">
                     <span>Lunes a Jueves</span>
                     <span class="font-bold text-white">12:30 - 22:30 hrs</span>
@@ -386,17 +383,17 @@
               </div>
             </div>
 
-            <div class="flex items-start gap-4">
-              <div class="w-11 h-11 rounded-2xl bg-brand-red/15 border border-brand-red/30 flex items-center justify-center text-brand-red shrink-0">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="flex items-start gap-3.5 sm:gap-4">
+              <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-brand-red/15 border border-brand-red/30 flex items-center justify-center text-brand-red shrink-0">
+                <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
               </div>
               <div>
-                <h3 class="font-bold text-lg text-white">Teléfono & Redes</h3>
-                <p class="text-sm text-zinc-300 mt-1">Tel / WhatsApp: <a href="tel:+56932291414" class="text-white font-bold hover:text-brand-red">+56 9 3229 1414</a></p>
-                <p class="text-sm text-zinc-300">Instagram: <a href="https://instagram.com/sushichin_cl" target="_blank" rel="noopener noreferrer" class="text-pink-400 font-semibold hover:underline">@sushichin_cl</a></p>
-                <p class="text-sm text-zinc-300">Facebook: <a href="https://facebook.com/sushichin.cl" target="_blank" rel="noopener noreferrer" class="text-blue-400 font-semibold hover:underline">sushichin.cl</a></p>
+                <h3 class="font-bold text-base sm:text-lg text-white">Teléfono & Redes</h3>
+                <p class="text-xs sm:text-sm text-zinc-300 mt-1">Tel / WhatsApp: <a href="tel:+56932291414" class="text-white font-bold hover:text-brand-red">+56 9 3229 1414</a></p>
+                <p class="text-xs sm:text-sm text-zinc-300">Instagram: <a href="https://instagram.com/sushichin_cl" target="_blank" rel="noopener noreferrer" class="text-pink-400 font-semibold hover:underline">@sushichin_cl</a></p>
+                <p class="text-xs sm:text-sm text-zinc-300">Facebook: <a href="https://facebook.com/sushichin.cl" target="_blank" rel="noopener noreferrer" class="text-blue-400 font-semibold hover:underline">sushichin.cl</a></p>
               </div>
             </div>
           </div>
@@ -406,7 +403,7 @@
               href="https://www.google.com/maps/search/?api=1&query=Villa+Las+Bandurrias+Conchali+Santiago+Chile"
               target="_blank"
               rel="noopener noreferrer"
-              class="flex items-center justify-center gap-2 bg-white hover:bg-zinc-200 text-brand-black font-bold py-3 px-4 rounded-xl text-sm transition-all"
+              class="flex items-center justify-center gap-2 bg-white hover:bg-zinc-200 text-brand-black font-bold py-3 px-4 rounded-xl text-sm transition-all min-h-[44px]"
             >
               <span>📍 Google Maps</span>
             </a>
@@ -414,18 +411,18 @@
               href="https://waze.com/ul?q=Villa%20Las%20Bandurrias%20Conchali%20Santiago&navigate=yes"
               target="_blank"
               rel="noopener noreferrer"
-              class="flex items-center justify-center gap-2 bg-sky-500 hover:bg-sky-400 text-white font-bold py-3 px-4 rounded-xl text-sm transition-all"
+              class="flex items-center justify-center gap-2 bg-sky-500 hover:bg-sky-400 text-white font-bold py-3 px-4 rounded-xl text-sm transition-all min-h-[44px]"
             >
               <span>🚗 Abrir en Waze</span>
             </a>
           </div>
         </div>
 
-        <div class="lg:col-span-7 rounded-3xl overflow-hidden border border-brand-border bg-brand-card min-h-[340px] sm:min-h-[420px] relative shadow-xl">
+        <div class="lg:col-span-7 rounded-3xl overflow-hidden border border-brand-border bg-brand-card min-h-[300px] sm:min-h-[420px] relative shadow-xl">
           <iframe
             title="Mapa ubicación SushiChin Villa Las Bandurrias Conchalí"
             src="https://maps.google.com/maps?q=Villa%20Las%20Bandurrias,%20Conchal%C3%AD,%20Santiago,%20Chile&t=&z=15&ie=UTF8&iwloc=&output=embed"
-            class="w-full h-full min-h-[340px] sm:min-h-[420px] border-0 filter contrast-105"
+            class="w-full h-full min-h-[300px] sm:min-h-[420px] border-0 filter contrast-105"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
@@ -435,19 +432,19 @@
   </section>
 
   <!-- ==================== FOOTER ==================== -->
-  <footer class="bg-brand-black border-t border-brand-border py-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-      <div class="flex items-center gap-3">
+  <footer class="bg-brand-black border-t border-brand-border py-8 sm:py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 text-center sm:text-left">
+      <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3">
         <div class="w-3 h-3 rounded-full bg-brand-red"></div>
         <span class="font-display font-black text-lg tracking-wide">SUSHI<span class="text-brand-red">CHIN</span></span>
         <span class="text-xs text-zinc-500">• Comida Japonesa • Villa Las Bandurrias, Conchalí</span>
       </div>
 
-      <div class="flex items-center gap-5 text-xs sm:text-sm text-zinc-400">
+      <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-5 text-xs sm:text-sm text-zinc-400">
         <a href="https://wa.me/56932291414" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors">+56 9 3229 1414</a>
         <a href="https://instagram.com/sushichin_cl" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">@sushichin_cl</a>
         <a href="https://facebook.com/sushichin.cl" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">sushichin.cl</a>
-        <button onclick="openAdminAuth()" class="text-zinc-500 hover:text-brand-red underline transition-colors">
+        <button type="button" onclick="openAdminAuth()" class="text-zinc-500 hover:text-brand-red underline transition-colors">
           Administrar Local
         </button>
       </div>
@@ -455,97 +452,105 @@
   </footer>
 
   <!-- ==================== BARRA FLOTANTE MÓVIL CARRITO ==================== -->
-  <div id="mobile-floating-bar" class="fixed bottom-4 left-4 right-4 z-30 md:hidden hidden">
+  <div id="mobile-floating-bar" class="fixed bottom-3 left-3 right-3 z-30 md:hidden hidden safe-bottom">
     <button
+      type="button"
       onclick="toggleCart(true)"
-      class="w-full bg-brand-red text-white font-extrabold py-3.5 px-5 rounded-2xl shadow-2xl shadow-brand-red/40 flex items-center justify-between"
+      class="w-full bg-brand-red hover:bg-brand-redDark text-white font-extrabold py-3.5 px-5 rounded-2xl shadow-2xl shadow-brand-red/40 flex items-center justify-between min-h-[52px] active:scale-[0.99] transition-transform"
     >
-      <div class="flex items-center gap-2">
-        <span id="mobile-cart-count" class="bg-white text-brand-black text-xs font-black px-2.5 py-0.5 rounded-full">0</span>
-        <span>Ver Mi Pedido</span>
+      <div class="flex items-center gap-2.5">
+        <span id="mobile-cart-count" class="bg-white text-brand-black text-xs font-black px-2.5 py-1 rounded-full">0</span>
+        <span class="text-sm">Ver Pedido y Salsas</span>
       </div>
       <span id="mobile-cart-total" class="font-display font-black text-base">$0</span>
     </button>
   </div>
 
-  <!-- ==================== MODAL PERSONALIZAR TABLA (CAMBIO DE ROLLS + PRECIO) ==================== -->
-  <div id="customize-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm">
-    <div class="bg-brand-card border border-brand-border rounded-3xl max-w-lg w-full max-h-[90vh] flex flex-col overflow-hidden shadow-2xl">
-      <div class="p-5 border-b border-brand-border bg-brand-black flex items-center justify-between">
-        <div>
-          <span class="text-[11px] font-black uppercase tracking-wider text-brand-red">Personalizar Tabla</span>
-          <h3 id="custom-modal-title" class="font-display font-black text-lg sm:text-xl text-white mt-0.5">Tabla</h3>
+  <!-- ==================== MODAL PERSONALIZAR TABLA (BOTTOM-SHEET EN MÓVIL) ==================== -->
+  <div id="customize-modal" class="fixed inset-0 z-50 hidden flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/85 backdrop-blur-sm">
+    <div onclick="closeCustomizeModal()" class="absolute inset-0"></div>
+    <div class="relative z-10 bg-brand-card border-t sm:border border-brand-border rounded-t-3xl sm:rounded-3xl max-w-lg w-full max-h-[88dvh] flex flex-col overflow-hidden shadow-2xl">
+      <div class="w-12 h-1.5 bg-zinc-700 rounded-full mx-auto mt-2.5 sm:hidden"></div>
+      <div class="p-4 sm:p-5 border-b border-brand-border bg-brand-black flex items-center justify-between gap-3">
+        <div class="min-w-0">
+          <span class="text-[11px] font-black uppercase tracking-wider text-brand-red">Cambiar Tipos de Sushi</span>
+          <h3 id="custom-modal-title" class="font-display font-black text-base sm:text-xl text-white mt-0.5 truncate">Tabla</h3>
         </div>
-        <button type="button" onclick="closeCustomizeModal()" class="p-2 rounded-xl bg-brand-card hover:bg-zinc-800 text-zinc-400 hover:text-white">
+        <button type="button" onclick="closeCustomizeModal()" class="p-2.5 rounded-xl bg-brand-card hover:bg-zinc-800 text-zinc-400 hover:text-white shrink-0">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
       </div>
 
-      <div id="custom-slots-container" class="flex-1 overflow-y-auto p-5 space-y-4">
-        <!-- Generado por JS -->
-      </div>
+      <div id="custom-slots-container" class="flex-1 overflow-y-auto p-4 sm:p-5 space-y-3 sm:space-y-4"></div>
 
-      <div class="p-5 border-t border-brand-border bg-brand-black space-y-3">
+      <div class="p-4 sm:p-5 border-t border-brand-border bg-brand-black space-y-3 safe-bottom">
         <div class="flex items-center justify-between text-xs text-zinc-400">
           <span>Precio base tabla: <strong id="custom-base-price" class="text-zinc-200">$0</strong></span>
           <span>Ajuste por cambios: <strong id="custom-delta-price" class="text-amber-400">$0</strong></span>
         </div>
         <div class="flex items-center justify-between">
           <span class="font-bold text-sm text-zinc-300">Precio Final Tabla</span>
-          <span id="custom-final-price" class="font-display font-black text-2xl text-brand-red">$0</span>
+          <span id="custom-final-price" class="font-display font-black text-xl sm:text-2xl text-brand-red">$0</span>
         </div>
         <button
           type="button"
           onclick="confirmCustomizedProduct()"
-          class="w-full bg-brand-red hover:bg-brand-redDark text-white font-black py-3.5 rounded-2xl text-sm sm:text-base shadow-lg shadow-brand-red/30 transition-all"
+          class="w-full bg-brand-red hover:bg-brand-redDark text-white font-black py-3.5 rounded-2xl text-sm sm:text-base shadow-lg shadow-brand-red/30 transition-all min-h-[48px]"
         >
-          Agregar Tabla Personalizada al Pedido
+          Agregar Tabla con Cambios al Pedido
         </button>
       </div>
     </div>
   </div>
 
-  <!-- ==================== DRAWER LATERAL: CARRITO Y TOMA DE PEDIDO ==================== -->
+  <!-- ==================== DRAWER LATERAL / SHEET: CARRITO Y TOMA DE PEDIDO ==================== -->
   <div id="cart-drawer" class="fixed inset-0 z-50 hidden">
     <div onclick="toggleCart(false)" class="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity"></div>
 
-    <div class="absolute inset-y-0 right-0 max-w-lg w-full bg-brand-card border-l border-brand-border shadow-2xl flex flex-col">
-      <div class="p-5 border-b border-brand-border flex items-center justify-between bg-brand-black">
+    <div class="absolute inset-y-0 right-0 max-w-lg w-full h-[100dvh] bg-brand-card border-l border-brand-border shadow-2xl flex flex-col">
+      <div class="p-4 sm:p-5 border-b border-brand-border flex items-center justify-between bg-brand-black shrink-0">
         <div>
-          <h3 class="font-display font-black text-xl text-white">Tu Pedido SushiChin 🥢</h3>
-          <p class="text-xs text-zinc-400">Elige tus salsas y completa tus datos para enviar</p>
+          <h3 class="font-display font-black text-lg sm:text-xl text-white">Tu Pedido SushiChin 🥢</h3>
+          <p class="text-xs text-zinc-400">Revisa tu total, elige salsas y envía por WhatsApp</p>
         </div>
-        <button onclick="toggleCart(false)" class="p-2 rounded-xl bg-brand-card hover:bg-zinc-800 text-zinc-400 hover:text-white">
+        <button type="button" onclick="toggleCart(false)" class="p-2.5 rounded-xl bg-brand-card hover:bg-zinc-800 text-zinc-400 hover:text-white">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
       </div>
 
-      <div class="flex-1 overflow-y-auto p-5 space-y-6">
+      <!-- Vista previa rápida del total con salsas al abrir desde tarjeta -->
+      <div id="sauce-preview-banner" class="hidden mx-4 sm:mx-5 mt-4 p-3.5 rounded-2xl bg-brand-red/10 border border-brand-red/40 flex items-center justify-between gap-3 shrink-0">
+        <div>
+          <span class="block text-[10px] font-black uppercase tracking-wider text-brand-red">Vista Previa con Salsas</span>
+          <span id="preview-breakdown-text" class="text-xs text-zinc-300">Sushi $0 + Salsas $0</span>
+        </div>
+        <span id="preview-total-amount" class="font-display font-black text-lg text-white">$0</span>
+      </div>
+
+      <div id="cart-scroll-container" class="flex-1 overflow-y-auto p-4 sm:p-5 space-y-6 safe-bottom">
         <div id="cart-items-container" class="space-y-3"></div>
 
         <!-- Selector de Salsas para la Venta Final -->
         <div id="sauces-section" class="space-y-3 border-t border-brand-border pt-5 hidden">
-          <div class="flex items-center justify-between">
-            <h4 class="font-bold text-sm uppercase tracking-wider text-brand-red">Salsas para tu Pedido</h4>
-            <span class="text-[11px] text-zinc-400">Incluidas y extras</span>
+          <div class="flex items-center justify-between gap-2">
+            <h4 class="font-bold text-xs sm:text-sm uppercase tracking-wider text-brand-red">Salsas para tu Venta</h4>
+            <span class="text-[11px] text-zinc-400">Sin picante, sin lactosa y extras</span>
           </div>
-          <div id="sauces-list" class="space-y-2">
-            <!-- Generado por JS -->
-          </div>
+          <div id="sauces-list" class="space-y-2"></div>
         </div>
 
         <form id="checkout-form" onsubmit="submitOrder(event)" class="space-y-4 border-t border-brand-border pt-5 hidden">
-          <h4 class="font-bold text-sm uppercase tracking-wider text-brand-red">1. Modalidad de Entrega</h4>
+          <h4 class="font-bold text-xs sm:text-sm uppercase tracking-wider text-brand-red">1. Modalidad de Entrega</h4>
           
           <div class="grid grid-cols-2 gap-3">
             <label class="cursor-pointer">
               <input type="radio" name="deliveryType" value="Retiro en Local" checked onchange="handleDeliveryChange()" class="peer sr-only" />
-              <div class="p-3 rounded-xl border border-brand-border bg-brand-black peer-checked:border-brand-red peer-checked:bg-brand-red/10 text-center transition-all">
-                <span class="block text-lg">🥡</span>
+              <div class="p-3 rounded-xl border border-brand-border bg-brand-black peer-checked:border-brand-red peer-checked:bg-brand-red/10 text-center transition-all min-h-[72px] flex flex-col justify-center">
+                <span class="block text-lg leading-none mb-1">🥡</span>
                 <span class="block font-bold text-xs sm:text-sm text-white">Retiro en Local</span>
                 <span class="block text-[11px] text-zinc-400">Las Bandurrias</span>
               </div>
@@ -553,15 +558,15 @@
 
             <label class="cursor-pointer">
               <input type="radio" name="deliveryType" value="Despacho a Domicilio" onchange="handleDeliveryChange()" class="peer sr-only" />
-              <div class="p-3 rounded-xl border border-brand-border bg-brand-black peer-checked:border-brand-red peer-checked:bg-brand-red/10 text-center transition-all">
-                <span class="block text-lg">🛵</span>
+              <div class="p-3 rounded-xl border border-brand-border bg-brand-black peer-checked:border-brand-red peer-checked:bg-brand-red/10 text-center transition-all min-h-[72px] flex flex-col justify-center">
+                <span class="block text-lg leading-none mb-1">🛵</span>
                 <span class="block font-bold text-xs sm:text-sm text-white">Despacho</span>
                 <span class="block text-[11px] text-zinc-400">Conchalí / Bandurrias</span>
               </div>
             </label>
           </div>
 
-          <h4 class="font-bold text-sm uppercase tracking-wider text-brand-red pt-2">2. Tus Datos</h4>
+          <h4 class="font-bold text-xs sm:text-sm uppercase tracking-wider text-brand-red pt-2">2. Tus Datos</h4>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
@@ -571,7 +576,7 @@
                 id="customer-name"
                 required
                 placeholder="Ej: Camila Soto"
-                class="w-full bg-brand-black border border-brand-border focus:border-brand-red rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none"
+                class="w-full bg-brand-black border border-brand-border focus:border-brand-red rounded-xl px-3.5 py-3 text-sm text-white focus:outline-none"
               />
             </div>
             <div>
@@ -581,7 +586,7 @@
                 id="customer-phone"
                 required
                 placeholder="Ej: +56 9 8765 4321"
-                class="w-full bg-brand-black border border-brand-border focus:border-brand-red rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none"
+                class="w-full bg-brand-black border border-brand-border focus:border-brand-red rounded-xl px-3.5 py-3 text-sm text-white focus:outline-none"
               />
             </div>
           </div>
@@ -592,7 +597,7 @@
               type="text"
               id="customer-address"
               placeholder="Ej: Pasaje Los Aromos 1234, Villa Las Bandurrias / Conchalí"
-              class="w-full bg-brand-black border border-brand-border focus:border-brand-red rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none"
+              class="w-full bg-brand-black border border-brand-border focus:border-brand-red rounded-xl px-3.5 py-3 text-sm text-white focus:outline-none"
             />
             <p class="text-[11px] text-amber-400 mt-1">* Valor de despacho sujeto a confirmación según sector de Conchalí.</p>
           </div>
@@ -601,7 +606,7 @@
             <label class="block text-xs font-semibold text-zinc-400 mb-1">Método de Pago *</label>
             <select
               id="payment-method"
-              class="w-full bg-brand-black border border-brand-border focus:border-brand-red rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none"
+              class="w-full bg-brand-black border border-brand-border focus:border-brand-red rounded-xl px-3.5 py-3 text-sm text-white focus:outline-none"
             >
               <option value="Transferencia Bancaria">Transferencia Bancaria</option>
               <option value="Efectivo">Efectivo</option>
@@ -615,17 +620,16 @@
               id="order-notes"
               rows="2"
               placeholder="Ej: 2 palitos, sin cebollín en el tempura..."
-              class="w-full bg-brand-black border border-brand-border focus:border-brand-red rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none"
+              class="w-full bg-brand-black border border-brand-border focus:border-brand-red rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none"
             ></textarea>
           </div>
 
-          <!-- Resumen Total -->
           <div class="bg-brand-black border border-brand-border rounded-2xl p-4 space-y-2">
-            <div class="flex justify-between text-sm text-zinc-400">
+            <div class="flex justify-between text-xs sm:text-sm text-zinc-400">
               <span>Subtotal Sushi & Tablas</span>
               <span id="cart-subtotal">$0</span>
             </div>
-            <div class="flex justify-between text-sm text-zinc-400">
+            <div class="flex justify-between text-xs sm:text-sm text-zinc-400">
               <span>Salsas Adicionales</span>
               <span id="cart-sauces-total">$0</span>
             </div>
@@ -641,7 +645,7 @@
 
           <button
             type="submit"
-            class="w-full bg-brand-red hover:bg-brand-redDark text-white font-black py-4 rounded-2xl text-base shadow-xl shadow-brand-red/30 transition-all flex items-center justify-center gap-2"
+            class="w-full bg-brand-red hover:bg-brand-redDark text-white font-black py-4 rounded-2xl text-sm sm:text-base shadow-xl shadow-brand-red/30 transition-all flex items-center justify-center gap-2 min-h-[52px]"
           >
             <span>Registrar Pedido y Enviar a WhatsApp</span>
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -655,13 +659,13 @@
 
   <!-- ==================== MODAL CONFIRMACIÓN DE PEDIDO EXITOSO ==================== -->
   <div id="order-success-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm">
-    <div class="bg-brand-card border border-brand-border rounded-3xl max-w-md w-full p-6 sm:p-7 text-center space-y-4 shadow-2xl">
-      <div class="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center mx-auto text-3xl">
+    <div class="bg-brand-card border border-brand-border rounded-3xl max-w-md w-full p-5 sm:p-7 text-center space-y-4 shadow-2xl max-h-[90dvh] overflow-y-auto">
+      <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center mx-auto text-2xl sm:text-3xl">
         ✓
       </div>
-      <h3 class="font-display font-black text-2xl text-white">¡Pedido Registrado!</h3>
-      <p class="text-sm text-zinc-300">
-        Tu orden <span id="success-order-id" class="font-bold text-brand-red">#SC-000</span> quedó guardada en nuestro sistema. Haz clic abajo para enviarla directo al WhatsApp de <strong>SushiChin</strong> y comenzar a prepararla.
+      <h3 class="font-display font-black text-xl sm:text-2xl text-white">¡Pedido Registrado!</h3>
+      <p class="text-xs sm:text-sm text-zinc-300">
+        Tu orden <span id="success-order-id" class="font-bold text-brand-red">#SC-000</span> quedó guardada. Toca el botón verde para enviarla directo al WhatsApp de <strong>SushiChin</strong>.
       </p>
 
       <div class="bg-brand-black border border-brand-border rounded-xl p-3 text-left text-xs text-zinc-300 max-h-44 overflow-y-auto whitespace-pre-line" id="success-whatsapp-preview"></div>
@@ -672,13 +676,14 @@
           href="#"
           target="_blank"
           rel="noopener noreferrer"
-          class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold py-3.5 rounded-xl text-sm transition-all flex items-center justify-center gap-2"
+          class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold py-3.5 rounded-xl text-sm transition-all flex items-center justify-center gap-2 min-h-[48px]"
         >
           <span>📲 Enviar Pedido a WhatsApp (+56 9 3229 1414)</span>
         </a>
         <button
+          type="button"
           onclick="closeSuccessModal()"
-          class="w-full bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-semibold py-2.5 rounded-xl text-xs transition-all"
+          class="w-full bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-semibold py-2.5 rounded-xl text-xs transition-all min-h-[42px]"
         >
           Cerrar y Volver a la Carta
         </button>
@@ -691,7 +696,7 @@
     <div class="bg-brand-card border border-brand-border rounded-3xl max-w-sm w-full p-6 space-y-5 shadow-2xl">
       <div class="flex items-center justify-between">
         <h3 class="font-display font-black text-lg text-white">Acceso Dueño / Admin</h3>
-        <button onclick="closeAdminAuth()" class="text-zinc-400 hover:text-white">✕</button>
+        <button type="button" onclick="closeAdminAuth()" class="text-zinc-400 hover:text-white p-1">✕</button>
       </div>
       <p class="text-xs text-zinc-400">
         Ingresa el PIN del local para gestionar el stock (Agotado / Disponible) y revisar el registro de pedidos.
@@ -708,7 +713,7 @@
         />
         <button
           type="submit"
-          class="w-full bg-brand-red hover:bg-brand-redDark text-white font-bold py-3 rounded-xl text-sm transition-all"
+          class="w-full bg-brand-red hover:bg-brand-redDark text-white font-bold py-3.5 rounded-xl text-sm transition-all min-h-[46px]"
         >
           Ingresar al Panel
         </button>
@@ -717,52 +722,55 @@
   </div>
 
   <!-- ==================== PANEL ADMINISTRADOR COMPLETO (1 CLIC) ==================== -->
-  <div id="admin-panel-modal" class="fixed inset-0 z-50 hidden bg-brand-black/95 backdrop-blur-md overflow-y-auto">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-6">
+  <div id="admin-panel-modal" class="fixed inset-0 z-50 hidden bg-brand-black/95 backdrop-blur-md overflow-y-auto safe-bottom">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-5 sm:py-8 space-y-5 sm:space-y-6">
       
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-brand-card border border-brand-border p-5 rounded-3xl">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-brand-card border border-brand-border p-4 sm:p-5 rounded-3xl">
         <div>
           <div class="flex items-center gap-2">
             <span class="px-2.5 py-0.5 rounded-full bg-brand-red text-white text-[11px] font-black uppercase">Modo Administrador</span>
             <span class="text-xs text-emerald-400 font-semibold">● Cambios instantáneos en carta</span>
           </div>
-          <h2 class="font-display font-black text-2xl text-white mt-1">Gestión Rápida SushiChin</h2>
+          <h2 class="font-display font-black text-xl sm:text-2xl text-white mt-1">Gestión Rápida SushiChin</h2>
         </div>
 
         <button
+          type="button"
           onclick="closeAdminPanel()"
-          class="self-start sm:self-auto bg-zinc-800 hover:bg-zinc-700 text-white font-bold px-5 py-2.5 rounded-xl text-sm transition-all"
+          class="self-start sm:self-auto bg-zinc-800 hover:bg-zinc-700 text-white font-bold px-5 py-2.5 rounded-xl text-sm transition-all min-h-[44px]"
         >
           ← Volver a la Web
         </button>
       </div>
 
-      <div class="flex flex-wrap gap-2 border-b border-brand-border pb-4">
+      <div class="flex items-center gap-2 overflow-x-auto no-scrollbar border-b border-brand-border pb-3">
         <button
+          type="button"
           id="tab-btn-stock"
           onclick="switchAdminTab('stock')"
-          class="px-5 py-2.5 rounded-xl font-bold text-sm bg-brand-red text-white transition-all"
+          class="shrink-0 px-4 sm:px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-brand-red text-white transition-all min-h-[44px]"
         >
           ⚡ Stock Rápido (1 Clic)
         </button>
         <button
+          type="button"
           id="tab-btn-orders"
           onclick="switchAdminTab('orders')"
-          class="px-5 py-2.5 rounded-xl font-bold text-sm bg-brand-card text-zinc-300 hover:text-white border border-brand-border transition-all flex items-center gap-2"
+          class="shrink-0 px-4 sm:px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-brand-card text-zinc-300 hover:text-white border border-brand-border transition-all flex items-center gap-2 min-h-[44px]"
         >
           <span>📋 Registro de Pedidos</span>
           <span id="admin-orders-count" class="bg-brand-red text-white text-xs px-2 py-0.5 rounded-full">0</span>
         </button>
         <button
+          type="button"
           id="tab-btn-add"
           onclick="switchAdminTab('add')"
-          class="px-5 py-2.5 rounded-xl font-bold text-sm bg-brand-card text-zinc-300 hover:text-white border border-brand-border transition-all"
+          class="shrink-0 px-4 sm:px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-brand-card text-zinc-300 hover:text-white border border-brand-border transition-all min-h-[44px]"
         >
           ➕ Agregar Nuevo Producto
         </button>
       </div>
 
-      <!-- PESTAÑA A: STOCK RÁPIDO (1 CLIC) -->
       <div id="admin-tab-stock" class="space-y-4">
         <div class="bg-brand-card border border-brand-border rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <p class="text-xs sm:text-sm text-zinc-300">
@@ -773,32 +781,32 @@
             id="admin-stock-search"
             oninput="renderAdminStock()"
             placeholder="Filtrar producto..."
-            class="bg-brand-black border border-brand-border rounded-xl px-3.5 py-2 text-sm text-white focus:border-brand-red focus:outline-none"
+            class="bg-brand-black border border-brand-border rounded-xl px-3.5 py-2.5 text-sm text-white focus:border-brand-red focus:outline-none"
           />
         </div>
 
         <div id="admin-stock-list" class="grid grid-cols-1 md:grid-cols-2 gap-3"></div>
       </div>
 
-      <!-- PESTAÑA B: REGISTRO DE PEDIDOS -->
       <div id="admin-tab-orders" class="hidden space-y-4">
         <div class="flex flex-wrap items-center justify-between gap-3 bg-brand-card border border-brand-border p-4 rounded-2xl">
           <div>
             <h3 class="font-bold text-base text-white">Historial y Control de Pedidos</h3>
             <p class="text-xs text-zinc-400">Pedidos registrados y enviados al WhatsApp oficial (+56 9 3229 1414).</p>
           </div>
-          <div class="flex flex-wrap items-center gap-2">
+          <div class="flex flex-wrap items-center gap-2 w-full sm:w-auto">
             <a
               href="https://wa.me/56932291414?text=%F0%9F%A7%AA%20*PRUEBA%20DE%20CONEXI%C3%93N%20SUSHICHIN*%0AEl%20sistema%20de%20pedidos%20web%20est%C3%A1%20vinculado%20correctamente%20al%20%2B56%209%203229%201414%20%F0%9F%8D%A3"
               target="_blank"
               rel="noopener noreferrer"
-              class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-all"
+              class="flex-1 sm:flex-none text-center bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-all min-h-[42px] flex items-center justify-center"
             >
               📲 Probar WhatsApp (+56 9 3229 1414)
             </a>
             <button
+              type="button"
               onclick="copyOrdersReport()"
-              class="bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-all"
+              class="flex-1 sm:flex-none text-center bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-all min-h-[42px]"
             >
               📄 Copiar Reporte del Día
             </button>
@@ -808,9 +816,8 @@
         <div id="admin-orders-list" class="space-y-4"></div>
       </div>
 
-      <!-- PESTAÑA C: AGREGAR NUEVO PRODUCTO -->
       <div id="admin-tab-add" class="hidden">
-        <form onsubmit="addNewProduct(event)" class="bg-brand-card border border-brand-border rounded-3xl p-6 max-w-xl space-y-4">
+        <form onsubmit="addNewProduct(event)" class="bg-brand-card border border-brand-border rounded-3xl p-5 sm:p-6 max-w-xl space-y-4">
           <h3 class="font-display font-black text-lg text-white">Agregar Producto a la Carta</h3>
           
           <div>
@@ -845,7 +852,7 @@
             <input type="url" id="new-prod-img" placeholder="https://..." class="w-full bg-brand-black border border-brand-border rounded-xl px-3.5 py-2.5 text-sm text-white focus:border-brand-red focus:outline-none" />
           </div>
 
-          <button type="submit" class="w-full bg-brand-red hover:bg-brand-redDark text-white font-bold py-3.5 rounded-xl text-sm transition-all">
+          <button type="submit" class="w-full bg-brand-red hover:bg-brand-redDark text-white font-bold py-3.5 rounded-xl text-sm transition-all min-h-[48px]">
             Guardar y Publicar en Carta
           </button>
         </form>
@@ -859,10 +866,10 @@
     const STORE_WHATSAPP = '56932291414';
     const ADMIN_PIN = '1234';
     const STORAGE_KEYS = {
-      PRODUCTS: 'sushichin_products_v2',
-      ORDERS: 'sushichin_orders_v2',
-      CART: 'sushichin_cart_v2',
-      SAUCES: 'sushichin_sauces_v2'
+      PRODUCTS: 'sushichin_products_v4',
+      ORDERS: 'sushichin_orders_v4',
+      CART: 'sushichin_cart_v4',
+      SAUCES: 'sushichin_sauces_v4'
     };
 
     const CATEGORIES = [
@@ -874,7 +881,6 @@
       'Bebidas y Extras'
     ];
 
-    // Variantes disponibles para cambiar un tipo de sushi dentro de tablas (con ajuste de precio)
     const ROLL_REPLACEMENT_OPTIONS = [
       { id: 'kani-base', label: 'Kanikama Palta Queso (Base)', deltaPrice: 0 },
       { id: 'pollo-teriyaki', label: 'Pollo Teriyaki Ciboulette', deltaPrice: 500 },
@@ -884,18 +890,16 @@
       { id: 'salmon-tempura', label: 'Salmón Tempura Caliente', deltaPrice: 1200 }
     ];
 
-    // Salsas disponibles para la venta final (incluidas $0 y adicionales con precio)
     const AVAILABLE_SAUCES = [
-      { id: 'soya-cortesia', name: 'Soya Tradicional (Cortesía)', price: 0, included: true },
-      { id: 'teriyaki-cortesia', name: 'Salsa Teriyaki Dulce (Cortesía)', price: 0, included: true },
-      { id: 'soya-extra', name: 'Soya Extra (Potecito)', price: 500, included: false },
-      { id: 'teriyaki-extra', name: 'Teriyaki Extra (Potecito)', price: 600, included: false },
-      { id: 'spicy-mayo', name: 'Spicy Mayo Picante', price: 700, included: false },
-      { id: 'acevichada-extra', name: 'Salsa Acevichada Especial', price: 800, included: false }
+      { id: 'soya-sin-lactosa', name: 'Soya Tradicional (Sin Lactosa • Cortesía)', price: 0, tag: 'Sin Lactosa' },
+      { id: 'teriyaki-sin-picante', name: 'Salsa Teriyaki Suave (Sin Picante • Cortesía)', price: 0, tag: 'Sin Picante' },
+      { id: 'acevichada-sin-lactosa', name: 'Salsa Acevichada Cítrica (Sin Lactosa)', price: 750, tag: 'Sin Lactosa' },
+      { id: 'soya-extra', name: 'Soya Extra (Potecito)', price: 500, tag: 'Sin Lactosa' },
+      { id: 'teriyaki-extra', name: 'Teriyaki Extra (Potecito)', price: 600, tag: 'Sin Picante' },
+      { id: 'spicy-mayo', name: 'Spicy Mayo Picante', price: 700, tag: 'Picante' }
     ];
 
     const DEFAULT_PRODUCTS = [
-      // Promociones / Tablas personalizables (cambio de roll + ajuste de precio)
       {
         id: 'promo-estrella-30',
         name: 'Tabla Estrella SushiChin (30 cortes)',
@@ -948,8 +952,6 @@
           { label: 'Roll 6 (10 cortes)', optionId: 'salmon-tempura' }
         ]
       },
-
-      // Rolls Tempura / Calientes
       {
         id: 'hot-salmon-tempura',
         name: 'Salmón Tempura (10 cortes)',
@@ -978,8 +980,6 @@
         image: 'https://images.unsplash.com/photo-1583623025817-d180a2221d0a?auto=format&fit=crop&w=800&q=80',
         soldOut: false
       },
-
-      // Rolls Envueltos
       {
         id: 'wrap-palta-salmon',
         name: 'Avocado Roll Salmón (10 cortes)',
@@ -1008,8 +1008,6 @@
         image: 'https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?auto=format&fit=crop&w=800&q=80',
         soldOut: false
       },
-
-      // Hand Rolls & Gohan
       {
         id: 'hand-salmon-palta',
         name: 'Hand Roll Salmón Palta Queso',
@@ -1038,8 +1036,6 @@
         soldOut: false,
         badge: 'Abundante'
       },
-
-      // Bebidas y Extras
       {
         id: 'extra-gyozas-5',
         name: 'Gyozas de Cerdo y Verduras (5 un.)',
@@ -1181,7 +1177,7 @@
         toast.style.opacity = '0';
         toast.style.transform = 'translateY(-8px)';
         setTimeout(() => toast.remove(), 250);
-      }, 2800);
+      }, 2400);
     }
 
     // ==================== CARTA Y FILTROS ====================
@@ -1193,7 +1189,7 @@
           <button
             type="button"
             onclick="selectCategory('${escapeHTML(cat)}')"
-            class="shrink-0 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+            class="shrink-0 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all min-h-[42px] ${
               active
                 ? 'bg-brand-red text-white shadow-lg shadow-brand-red/25'
                 : 'bg-brand-card text-zinc-300 hover:text-white border border-brand-border hover:border-zinc-700'
@@ -1227,14 +1223,14 @@
 
       if (filtered.length === 0) {
         grid.innerHTML = `
-          <div class="col-span-full bg-brand-card border border-brand-border rounded-3xl p-10 text-center space-y-3">
+          <div class="col-span-full bg-brand-card border border-brand-border rounded-3xl p-8 sm:p-10 text-center space-y-3">
             <p class="text-2xl">🥢</p>
             <h3 class="font-display font-bold text-lg text-white">No encontramos productos con ese filtro</h3>
-            <p class="text-sm text-zinc-400">Prueba limpiando la búsqueda o seleccionando otra categoría.</p>
+            <p class="text-xs sm:text-sm text-zinc-400">Prueba limpiando la búsqueda o seleccionando otra categoría.</p>
             <button
               type="button"
               onclick="resetMenuFilters()"
-              class="mt-2 bg-brand-red hover:bg-brand-redDark text-white text-xs font-bold px-5 py-2.5 rounded-xl transition-all"
+              class="mt-2 bg-brand-red hover:bg-brand-redDark text-white text-xs font-bold px-5 py-3 rounded-xl transition-all min-h-[44px]"
             >
               Ver Toda la Carta
             </button>
@@ -1274,7 +1270,7 @@
                 }
               </div>
 
-              <div class="p-5 space-y-2">
+              <div class="p-4 sm:p-5 space-y-2">
                 <div class="flex items-start justify-between gap-3">
                   <h3 class="font-display font-extrabold text-base sm:text-lg text-white leading-snug">
                     ${escapeHTML(prod.name)}
@@ -1286,16 +1282,52 @@
                 <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
                   ${escapeHTML(prod.description)}
                 </p>
+
+                ${
+                  !isSoldOut
+                    ? `<div class="pt-2 flex flex-wrap items-center gap-1.5">
+                        <button
+                          type="button"
+                          onclick="quickToggleSauce('soya-sin-lactosa')"
+                          class="px-2.5 py-1.5 rounded-lg text-[11px] font-bold border transition-all ${
+                            Number(selectedSauces['soya-sin-lactosa'] || 0) > 0
+                              ? 'bg-emerald-600/20 border-emerald-500/60 text-emerald-300'
+                              : 'bg-brand-black border-zinc-800 text-zinc-400 hover:text-white'
+                          }"
+                        >
+                          ${Number(selectedSauces['soya-sin-lactosa'] || 0) > 0 ? '✓ ' : '+ '}Soya Sin Lactosa ($0)
+                        </button>
+                        <button
+                          type="button"
+                          onclick="quickToggleSauce('teriyaki-sin-picante')"
+                          class="px-2.5 py-1.5 rounded-lg text-[11px] font-bold border transition-all ${
+                            Number(selectedSauces['teriyaki-sin-picante'] || 0) > 0
+                              ? 'bg-emerald-600/20 border-emerald-500/60 text-emerald-300'
+                              : 'bg-brand-black border-zinc-800 text-zinc-400 hover:text-white'
+                          }"
+                        >
+                          ${Number(selectedSauces['teriyaki-sin-picante'] || 0) > 0 ? '✓ ' : '+ '}Teriyaki Sin Picante ($0)
+                        </button>
+                        <button
+                          type="button"
+                          onclick="openCartToSauces()"
+                          class="px-2.5 py-1.5 rounded-lg text-[11px] font-bold bg-brand-black border border-zinc-800 text-amber-300 hover:border-amber-400/50 transition-all"
+                        >
+                          Más salsas...
+                        </button>
+                      </div>`
+                    : ''
+                }
               </div>
             </div>
 
-            <div class="px-5 pb-5 pt-2 space-y-2">
+            <div class="px-4 sm:px-5 pb-4 sm:pb-5 pt-1">
               ${
                 isSoldOut
                   ? `<button
                       type="button"
                       disabled
-                      class="w-full py-3 rounded-xl bg-zinc-800 text-zinc-500 font-bold text-xs uppercase tracking-wider cursor-not-allowed"
+                      class="w-full py-3 rounded-xl bg-zinc-800 text-zinc-500 font-bold text-xs uppercase tracking-wider cursor-not-allowed min-h-[46px]"
                     >
                       Sin Stock por Hoy
                     </button>`
@@ -1304,14 +1336,14 @@
                       <button
                         type="button"
                         onclick="openCustomizeModal('${prod.id}')"
-                        class="w-full py-3 px-3 rounded-xl bg-amber-500/15 hover:bg-amber-500/25 border border-amber-400/50 text-amber-300 font-extrabold text-xs transition-all flex items-center justify-center gap-1.5"
+                        class="w-full py-3 px-3 rounded-xl bg-amber-500/15 hover:bg-amber-500/25 border border-amber-400/50 text-amber-300 font-extrabold text-xs transition-all flex items-center justify-center gap-1.5 min-h-[46px]"
                       >
                         <span>🔄 Cambiar Rolls</span>
                       </button>
                       <button
                         type="button"
                         onclick="addToCart('${prod.id}')"
-                        class="w-full py-3 px-3 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-extrabold text-xs transition-all shadow-lg shadow-brand-red/20 active:scale-[0.99] flex items-center justify-center gap-1.5"
+                        class="w-full py-3 px-3 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-extrabold text-xs transition-all shadow-lg shadow-brand-red/20 active:scale-[0.99] flex items-center justify-center gap-1.5 min-h-[46px]"
                       >
                         <span>Pedir Tal Cual</span>
                         <span>+</span>
@@ -1320,7 +1352,7 @@
                   : `<button
                       type="button"
                       onclick="addToCart('${prod.id}')"
-                      class="w-full py-3 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-extrabold text-sm transition-all shadow-lg shadow-brand-red/20 active:scale-[0.99] flex items-center justify-center gap-2"
+                      class="w-full py-3 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-extrabold text-sm transition-all shadow-lg shadow-brand-red/20 active:scale-[0.99] flex items-center justify-center gap-2 min-h-[46px]"
                     >
                       <span>Agregar al Pedido</span>
                       <span>+</span>
@@ -1330,6 +1362,19 @@
           </article>
         `;
       }).join('');
+    }
+
+    function quickToggleSauce(sauceId) {
+      const current = Number(selectedSauces[sauceId] || 0);
+      updateSauceQty(sauceId, current > 0 ? -1 : 1, false);
+      renderMenu();
+    }
+
+    function openCartToSauces() {
+      toggleCart(true, true);
+      setTimeout(() => {
+        document.getElementById('sauces-section')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 140);
     }
 
     function resetMenuFilters() {
@@ -1358,13 +1403,13 @@
 
       container.innerHTML = slots.map((slot, idx) => {
         const optionsHtml = ROLL_REPLACEMENT_OPTIONS.map(opt => {
-          const selected = opt.optionId === slot.optionId;
+          const selected = opt.id === slot.optionId;
           const priceLabel = opt.deltaPrice === 0 ? 'Sin recargo' : `${formatDelta(opt.deltaPrice)}`;
           return `<option value="${opt.id}" ${selected ? 'selected' : ''}>${escapeHTML(opt.label)} (${priceLabel})</option>`;
         }).join('');
 
         return `
-          <div class="bg-brand-black border border-brand-border rounded-2xl p-4 space-y-2">
+          <div class="bg-brand-black border border-brand-border rounded-2xl p-3.5 sm:p-4 space-y-2">
             <div class="flex items-center justify-between gap-2">
               <label for="slot-select-${idx}" class="text-xs font-extrabold uppercase tracking-wider text-zinc-300">
                 ${escapeHTML(slot.label)}
@@ -1375,7 +1420,7 @@
               id="slot-select-${idx}"
               data-slot-label="${escapeHTML(slot.label)}"
               onchange="recalculateCustomizedPrice()"
-              class="w-full bg-brand-card border border-brand-border focus:border-brand-red rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none"
+              class="w-full bg-brand-card border border-brand-border focus:border-brand-red rounded-xl px-3 py-3 text-sm text-white focus:outline-none"
             >
               ${optionsHtml}
             </select>
@@ -1464,13 +1509,18 @@
     }
 
     // ==================== CARRITO, SALSAS Y CHECKOUT ====================
-    function toggleCart(open) {
+    function toggleCart(open, showSaucePreview = false) {
       const drawer = document.getElementById('cart-drawer');
+      const banner = document.getElementById('sauce-preview-banner');
       if (open) {
+        if (banner) {
+          banner.classList.toggle('hidden', !showSaucePreview);
+        }
         drawer.classList.remove('hidden');
         document.body.classList.add('overflow-hidden');
         renderCart();
       } else {
+        if (banner) banner.classList.add('hidden');
         drawer.classList.add('hidden');
         document.body.classList.remove('overflow-hidden');
       }
@@ -1519,7 +1569,8 @@
       renderCart();
     }
 
-    function updateSauceQty(sauceId, delta) {
+    function updateSauceQty(sauceId, delta, notify = true) {
+      const sauce = AVAILABLE_SAUCES.find(s => s.id === sauceId);
       const current = Number(selectedSauces[sauceId] || 0);
       const next = Math.max(0, current + delta);
       if (next === 0) {
@@ -1531,6 +1582,9 @@
       renderSaucesSelector();
       updateCartTotalsDisplay();
       updateCartBadges();
+      if (notify && sauce && delta > 0) {
+        showToast(`${sauce.name} agregada`);
+      }
     }
 
     function getCartProductsSubtotal() {
@@ -1596,20 +1650,25 @@
         return `
           <div class="flex items-center justify-between gap-3 bg-brand-black border ${qty > 0 ? 'border-brand-red/60' : 'border-brand-border'} rounded-xl px-3.5 py-2.5">
             <div class="min-w-0">
-              <p class="text-xs sm:text-sm font-bold text-white truncate">${escapeHTML(sauce.name)}</p>
-              <p class="text-[11px] ${sauce.price > 0 ? 'text-amber-400 font-bold' : 'text-emerald-400'}">${priceLabel}</p>
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <p class="text-xs sm:text-sm font-bold text-white truncate">${escapeHTML(sauce.name)}</p>
+              </div>
+              <div class="flex items-center gap-2 mt-0.5">
+                <span class="text-[11px] ${sauce.price > 0 ? 'text-amber-400 font-bold' : 'text-emerald-400'}">${priceLabel}</span>
+                <span class="text-[10px] px-1.5 py-0.5 rounded bg-zinc-900 text-zinc-300 border border-zinc-800">${escapeHTML(sauce.tag)}</span>
+              </div>
             </div>
             <div class="flex items-center gap-2 shrink-0">
               <button
                 type="button"
                 onclick="updateSauceQty('${sauce.id}', -1)"
-                class="w-7 h-7 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-white font-black text-xs flex items-center justify-center"
+                class="w-9 h-9 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-white font-black text-sm flex items-center justify-center"
               >−</button>
-              <span class="w-5 text-center font-extrabold text-xs">${qty}</span>
+              <span class="w-5 text-center font-extrabold text-sm">${qty}</span>
               <button
                 type="button"
                 onclick="updateSauceQty('${sauce.id}', 1)"
-                class="w-7 h-7 rounded-lg bg-brand-red hover:bg-brand-redDark text-white font-black text-xs flex items-center justify-center"
+                class="w-9 h-9 rounded-lg bg-brand-red hover:bg-brand-redDark text-white font-black text-sm flex items-center justify-center"
               >+</button>
             </div>
           </div>
@@ -1629,6 +1688,11 @@
       if (elSub) elSub.textContent = formatCLP(subtotal);
       if (elSauces) elSauces.textContent = formatCLP(saucesTotal);
       if (elTotal) elTotal.textContent = formatCLP(grandTotal);
+
+      const previewText = document.getElementById('preview-breakdown-text');
+      const previewAmount = document.getElementById('preview-total-amount');
+      if (previewText) previewText.textContent = `Sushi ${formatCLP(subtotal)} + Salsas ${formatCLP(saucesTotal)}`;
+      if (previewAmount) previewAmount.textContent = formatCLP(grandTotal);
     }
 
     function handleDeliveryChange() {
@@ -1664,7 +1728,7 @@
             <button
               type="button"
               onclick="toggleCart(false); document.getElementById('carta').scrollIntoView({behavior:'smooth'});"
-              class="mt-2 bg-brand-red hover:bg-brand-redDark text-white text-xs font-bold px-5 py-2.5 rounded-xl transition-all"
+              class="mt-2 bg-brand-red hover:bg-brand-redDark text-white text-xs font-bold px-5 py-3 rounded-xl transition-all min-h-[44px]"
             >
               Ir a la Carta
             </button>
@@ -1702,13 +1766,13 @@
               <button
                 type="button"
                 onclick="updateCartQty('${item.cartKey}', -1)"
-                class="w-8 h-8 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-white font-black text-sm flex items-center justify-center"
+                class="w-9 h-9 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-white font-black text-sm flex items-center justify-center"
               >−</button>
-              <span class="w-6 text-center font-extrabold text-sm">${item.qty}</span>
+              <span class="w-5 text-center font-extrabold text-sm">${item.qty}</span>
               <button
                 type="button"
                 onclick="updateCartQty('${item.cartKey}', 1)"
-                class="w-8 h-8 rounded-lg bg-brand-red hover:bg-brand-redDark text-white font-black text-sm flex items-center justify-center"
+                class="w-9 h-9 rounded-lg bg-brand-red hover:bg-brand-redDark text-white font-black text-sm flex items-center justify-center"
               >+</button>
             </div>
           </div>
@@ -1854,6 +1918,7 @@
       saveCart();
       saveSauces();
       updateCartBadges();
+      renderMenu();
       renderCart();
       event.target.reset();
       handleDeliveryChange();
@@ -1909,9 +1974,9 @@
         if (panel) panel.classList.toggle('hidden', t !== tab);
         if (btn) {
           if (t === tab) {
-            btn.className = 'px-5 py-2.5 rounded-xl font-bold text-sm bg-brand-red text-white transition-all flex items-center gap-2';
+            btn.className = 'shrink-0 px-4 sm:px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-brand-red text-white transition-all flex items-center gap-2 min-h-[44px]';
           } else {
-            btn.className = 'px-5 py-2.5 rounded-xl font-bold text-sm bg-brand-card text-zinc-300 hover:text-white border border-brand-border transition-all flex items-center gap-2';
+            btn.className = 'shrink-0 px-4 sm:px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-brand-card text-zinc-300 hover:text-white border border-brand-border transition-all flex items-center gap-2 min-h-[44px]';
           }
         }
       });
@@ -1955,7 +2020,7 @@
             <button
               type="button"
               onclick="toggleProductSoldOut('${prod.id}')"
-              class="shrink-0 flex items-center gap-2.5 px-4 py-2.5 rounded-xl font-black text-xs uppercase tracking-wider transition-all ${
+              class="shrink-0 flex items-center gap-2 px-3.5 sm:px-4 py-2.5 rounded-xl font-black text-xs uppercase tracking-wider transition-all min-h-[42px] ${
                 isSoldOut
                   ? 'bg-brand-red text-white shadow-lg shadow-brand-red/30'
                   : 'bg-emerald-600/20 text-emerald-400 border border-emerald-500/40 hover:bg-emerald-600/30'
@@ -1979,8 +2044,8 @@
       const originalHTML = card.innerHTML;
       card.innerHTML = `
         <input type="number" min="500" step="10" value="${prod.price}" class="w-24 bg-brand-black border border-brand-red rounded-lg px-2 py-1 text-xs text-white font-bold focus:outline-none" />
-        <button type="button" class="text-[11px] bg-emerald-600 text-white px-2 py-1 rounded-lg font-bold">OK</button>
-        <button type="button" class="text-[11px] text-zinc-400 px-1">✕</button>
+        <button type="button" class="text-[11px] bg-emerald-600 text-white px-2.5 py-1 rounded-lg font-bold">OK</button>
+        <button type="button" class="text-[11px] text-zinc-400 px-1.5">✕</button>
       `;
 
       const input = card.querySelector('input');
@@ -2047,7 +2112,7 @@
           : '';
 
         return `
-          <div class="bg-brand-card border border-brand-border rounded-2xl p-5 space-y-3">
+          <div class="bg-brand-card border border-brand-border rounded-2xl p-4 sm:p-5 space-y-3">
             <div class="flex flex-wrap items-center justify-between gap-2 border-b border-zinc-800 pb-3">
               <div>
                 <span class="font-display font-black text-base text-brand-red">#${escapeHTML(ord.id)}</span>
@@ -2153,7 +2218,6 @@
       switchAdminTab('stock');
     }
 
-    // Inicialización al cargar
     document.addEventListener('DOMContentLoaded', () => {
       renderCategoryTabs();
       renderMenu();
