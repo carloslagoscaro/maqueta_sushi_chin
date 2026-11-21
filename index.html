@@ -81,37 +81,26 @@
       <a href="#inicio" class="flex items-center gap-3 group focus:outline-none" aria-label="Inicio SushiChin">
         <div class="w-40 sm:w-48 transition-transform duration-300 group-hover:scale-105">
           <svg viewBox="0 0 420 155" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
-            <!-- Fondo transparente/negro -->
-            <!-- Dos medias esferas rojas superiores -->
             <g>
-              <!-- Esfera izquierda (China) -->
               <path d="M 88 74 A 62 62 0 0 1 205 46 L 205 74 Z" fill="#E51A1A" stroke="#E51A1A" stroke-width="5"/>
               <path d="M 82 74 A 68 68 0 0 1 208 40" fill="none" stroke="#E51A1A" stroke-width="4" stroke-linecap="round"/>
-              <!-- Estrella grande izquierda -->
               <polygon points="122,26 126,38 139,38 129,46 133,58 122,51 111,58 115,46 105,38 118,38" fill="#FFFFFF"/>
-              <!-- 3 estrellas pequeñas arco -->
               <polygon points="164,17 166,22 171,22 167,25 168,30 164,27 160,30 161,25 157,22 162,22" fill="#FFFFFF"/>
               <polygon points="178,30 180,35 185,35 181,38 182,43 178,40 174,43 175,38 171,35 176,35" fill="#FFFFFF"/>
               <polygon points="177,48 179,53 184,53 180,56 181,61 177,58 173,61 174,56 170,53 175,53" fill="#FFFFFF"/>
 
-              <!-- Esfera derecha (Japón / Roll) -->
               <path d="M 196 74 A 62 62 0 0 1 316 74 Z" fill="#E51A1A"/>
               <path d="M 192 68 A 68 68 0 0 1 322 74" fill="none" stroke="#E51A1A" stroke-width="4" stroke-linecap="round"/>
-              <!-- Centro blanco tipo roll / sol -->
               <circle cx="256" cy="56" r="24" fill="#FFFFFF"/>
               <circle cx="256" cy="56" r="10" fill="#E51A1A"/>
-              <!-- Línea divisoria negra entre ambas esferas -->
               <path d="M 194 74 A 63 63 0 0 1 215 36" fill="none" stroke="#0B0B0B" stroke-width="3.5"/>
             </g>
 
-            <!-- Texto Principal SUSHICHIN -->
             <text x="210" y="114" text-anchor="middle" font-family="Montserrat, Inter, sans-serif" font-weight="900" font-size="45" letter-spacing="1.5">
               <tspan fill="#FFFFFF">SUSHI</tspan><tspan fill="#E51A1A">CHIN</tspan>
             </text>
-            <!-- Detalle unión C-H estilo palillo/trazo -->
             <rect x="263" y="96" width="22" height="6" rx="3" fill="#E51A1A"/>
 
-            <!-- Píldora blanca inferior -->
             <rect x="30" y="124" width="360" height="24" rx="8" fill="#FFFFFF"/>
             <circle cx="48" cy="136" r="3.2" fill="#0B0B0B"/>
             <text x="210" y="140.5" text-anchor="middle" font-family="Montserrat, Inter, sans-serif" font-weight="800" font-size="13.5" letter-spacing="5.5" fill="#0B0B0B">COMIDA JAPONESA</text>
@@ -130,7 +119,6 @@
 
       <!-- Acciones Derecha: Admin Rápido + Carrito -->
       <div class="flex items-center gap-2 sm:gap-3">
-        <!-- Botón Acceso Rápido Administrador -->
         <button
           onclick="openAdminAuth()"
           title="Panel Administrador de Stock y Pedidos"
@@ -143,7 +131,6 @@
           <span class="hidden sm:inline">Admin</span>
         </button>
 
-        <!-- Botón Carrito -->
         <button
           onclick="toggleCart(true)"
           class="relative flex items-center gap-2 bg-brand-red hover:bg-brand-redDark text-white px-4 py-2.5 rounded-xl font-bold text-sm transition-all shadow-lg shadow-brand-red/20 active:scale-95"
@@ -160,7 +147,6 @@
 
   <!-- ==================== HERO & PROPAGANDA DIGITAL ==================== -->
   <section id="inicio" class="relative overflow-hidden border-b border-brand-border">
-    <!-- Fondo con brillo rojo sutil -->
     <div class="absolute inset-0 pointer-events-none">
       <div class="absolute -top-24 -left-24 w-96 h-96 bg-brand-red/15 rounded-full blur-3xl"></div>
       <div class="absolute bottom-0 right-0 w-96 h-96 bg-brand-red/10 rounded-full blur-3xl"></div>
@@ -169,7 +155,6 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
-        <!-- Columna Izquierda: Reseña Exacta + CTA + Redes -->
         <div class="lg:col-span-7 space-y-6">
           <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-red/15 border border-brand-red/40 text-brand-red text-xs sm:text-sm font-bold tracking-wide uppercase">
             <span class="w-2 h-2 rounded-full bg-brand-red animate-ping"></span>
@@ -180,7 +165,6 @@
             El verdadero sabor de <span class="text-brand-red">SushiChin</span> directo a tu mesa
           </h1>
 
-          <!-- Tarjeta de Presentación Web Optimizada para Conversión -->
           <div class="bg-brand-card border-l-4 border-brand-red rounded-2xl p-6 sm:p-7 shadow-2xl space-y-3.5">
             <h2 class="font-display font-extrabold text-lg sm:text-xl text-white tracking-tight">
               El mejor sushi fresco, preparado al momento para ti.
@@ -201,7 +185,6 @@
             </div>
           </div>
 
-          <!-- Botones de Acción Principales -->
           <div class="flex flex-wrap items-center gap-3 sm:gap-4 pt-2">
             <a
               href="#carta"
@@ -223,7 +206,6 @@
             </a>
           </div>
 
-          <!-- Redes Sociales Oficiales -->
           <div class="flex flex-wrap items-center gap-4 pt-2 text-sm text-zinc-400">
             <span class="font-semibold text-zinc-300">Síguenos:</span>
             <a
@@ -259,7 +241,6 @@
         <!-- Columna Derecha: Flyer / Propaganda Digital Oficial del Local -->
         <div id="propaganda" class="lg:col-span-5">
           <div class="relative rounded-3xl overflow-hidden border-2 border-brand-red/60 bg-gradient-to-b from-zinc-900 via-brand-black to-zinc-950 shadow-2xl shadow-brand-red/20 p-5 sm:p-6">
-            <!-- Cinta superior flyer -->
             <div class="flex items-center justify-between border-b border-zinc-800 pb-4 mb-4">
               <div class="flex items-center gap-2">
                 <span class="bg-brand-red text-white text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">Propaganda Oficial</span>
@@ -267,7 +248,6 @@
               <span class="text-xs font-bold text-zinc-400">🥢 Fresco al momento</span>
             </div>
 
-            <!-- Imagen destacada del flyer con overlay gráfico -->
             <div class="relative rounded-2xl overflow-hidden aspect-[4/3] mb-4 group">
               <img
                 src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=900&q=80"
@@ -277,13 +257,11 @@
               />
               <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
               
-              <!-- Badge Precio Promo en Flyer -->
               <div class="absolute top-3 right-3 bg-brand-red text-white rounded-2xl px-3.5 py-2 text-center shadow-lg transform rotate-2">
                 <span class="block text-[10px] font-bold uppercase tracking-wider">Tabla Estrella</span>
                 <span class="font-display font-black text-lg leading-none">$14.990</span>
               </div>
 
-              <!-- Texto inferior dentro de la foto del flyer -->
               <div class="absolute bottom-3 left-3 right-3">
                 <p class="text-xs font-bold uppercase tracking-widest text-brand-red mb-0.5">SUSHICHIN • COMIDA JAPONESA</p>
                 <h3 class="font-display font-black text-xl sm:text-2xl text-white leading-tight">
@@ -292,7 +270,6 @@
               </div>
             </div>
 
-            <!-- Pie del Flyer: Modalidades + Redes -->
             <div class="grid grid-cols-2 gap-3 text-xs sm:text-sm">
               <div class="bg-brand-card border border-brand-border rounded-xl p-3 flex items-center gap-2.5">
                 <span class="text-xl">🛵</span>
@@ -327,7 +304,7 @@
       <div>
         <span class="text-brand-red font-bold text-xs uppercase tracking-widest">Carta Digital en Vivo</span>
         <h2 class="font-display font-black text-2xl sm:text-4xl mt-1">Nuestros Rolls & Promociones</h2>
-        <p class="text-zinc-400 text-sm sm:text-base mt-1">Preparados al instante con salmón fresco, palta hass y el toque único de SushiChin.</p>
+        <p class="text-zinc-400 text-sm sm:text-base mt-1">Preparados al instante con salmón fresco, palta hass, cambios de roll en tablas y salsas a elección.</p>
       </div>
 
       <!-- Buscador rápido -->
@@ -345,7 +322,7 @@
       </div>
     </div>
 
-    <!-- Barra de Categorías (Scroll horizontal táctil en móvil) -->
+    <!-- Barra de Categorías -->
     <div id="category-tabs" class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-4 mb-6">
       <!-- Generado por JS -->
     </div>
@@ -368,10 +345,8 @@
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-        <!-- Tarjeta de Información y Horarios -->
         <div class="lg:col-span-5 bg-brand-card border border-brand-border rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6">
           <div class="space-y-6">
-            <!-- Dirección -->
             <div class="flex items-start gap-4">
               <div class="w-11 h-11 rounded-2xl bg-brand-red/15 border border-brand-red/30 flex items-center justify-center text-brand-red shrink-0">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -386,7 +361,6 @@
               </div>
             </div>
 
-            <!-- Horarios de Atención -->
             <div class="flex items-start gap-4">
               <div class="w-11 h-11 rounded-2xl bg-brand-red/15 border border-brand-red/30 flex items-center justify-center text-brand-red shrink-0">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -412,7 +386,6 @@
               </div>
             </div>
 
-            <!-- Contacto y Redes -->
             <div class="flex items-start gap-4">
               <div class="w-11 h-11 rounded-2xl bg-brand-red/15 border border-brand-red/30 flex items-center justify-center text-brand-red shrink-0">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -428,7 +401,6 @@
             </div>
           </div>
 
-          <!-- Botones Cómo Llegar -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
             <a
               href="https://www.google.com/maps/search/?api=1&query=Villa+Las+Bandurrias+Conchali+Santiago+Chile"
@@ -449,7 +421,6 @@
           </div>
         </div>
 
-        <!-- Mapa Interactivo Embebido -->
         <div class="lg:col-span-7 rounded-3xl overflow-hidden border border-brand-border bg-brand-card min-h-[340px] sm:min-h-[420px] relative shadow-xl">
           <iframe
             title="Mapa ubicación SushiChin Villa Las Bandurrias Conchalí"
@@ -497,18 +468,54 @@
     </button>
   </div>
 
+  <!-- ==================== MODAL PERSONALIZAR TABLA (CAMBIO DE ROLLS + PRECIO) ==================== -->
+  <div id="customize-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm">
+    <div class="bg-brand-card border border-brand-border rounded-3xl max-w-lg w-full max-h-[90vh] flex flex-col overflow-hidden shadow-2xl">
+      <div class="p-5 border-b border-brand-border bg-brand-black flex items-center justify-between">
+        <div>
+          <span class="text-[11px] font-black uppercase tracking-wider text-brand-red">Personalizar Tabla</span>
+          <h3 id="custom-modal-title" class="font-display font-black text-lg sm:text-xl text-white mt-0.5">Tabla</h3>
+        </div>
+        <button type="button" onclick="closeCustomizeModal()" class="p-2 rounded-xl bg-brand-card hover:bg-zinc-800 text-zinc-400 hover:text-white">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <div id="custom-slots-container" class="flex-1 overflow-y-auto p-5 space-y-4">
+        <!-- Generado por JS -->
+      </div>
+
+      <div class="p-5 border-t border-brand-border bg-brand-black space-y-3">
+        <div class="flex items-center justify-between text-xs text-zinc-400">
+          <span>Precio base tabla: <strong id="custom-base-price" class="text-zinc-200">$0</strong></span>
+          <span>Ajuste por cambios: <strong id="custom-delta-price" class="text-amber-400">$0</strong></span>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="font-bold text-sm text-zinc-300">Precio Final Tabla</span>
+          <span id="custom-final-price" class="font-display font-black text-2xl text-brand-red">$0</span>
+        </div>
+        <button
+          type="button"
+          onclick="confirmCustomizedProduct()"
+          class="w-full bg-brand-red hover:bg-brand-redDark text-white font-black py-3.5 rounded-2xl text-sm sm:text-base shadow-lg shadow-brand-red/30 transition-all"
+        >
+          Agregar Tabla Personalizada al Pedido
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- ==================== DRAWER LATERAL: CARRITO Y TOMA DE PEDIDO ==================== -->
   <div id="cart-drawer" class="fixed inset-0 z-50 hidden">
-    <!-- Backdrop oscuro -->
     <div onclick="toggleCart(false)" class="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity"></div>
 
-    <!-- Panel Lateral -->
     <div class="absolute inset-y-0 right-0 max-w-lg w-full bg-brand-card border-l border-brand-border shadow-2xl flex flex-col">
-      <!-- Header Carrito -->
       <div class="p-5 border-b border-brand-border flex items-center justify-between bg-brand-black">
         <div>
           <h3 class="font-display font-black text-xl text-white">Tu Pedido SushiChin 🥢</h3>
-          <p class="text-xs text-zinc-400">Completa tus datos para registrar y enviar tu orden</p>
+          <p class="text-xs text-zinc-400">Elige tus salsas y completa tus datos para enviar</p>
         </div>
         <button onclick="toggleCart(false)" class="p-2 rounded-xl bg-brand-card hover:bg-zinc-800 text-zinc-400 hover:text-white">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -517,14 +524,20 @@
         </button>
       </div>
 
-      <!-- Contenido Scrollable del Carrito -->
       <div class="flex-1 overflow-y-auto p-5 space-y-6">
-        <!-- Lista de Productos en Carrito -->
-        <div id="cart-items-container" class="space-y-3">
-          <!-- Renderizado por JS -->
+        <div id="cart-items-container" class="space-y-3"></div>
+
+        <!-- Selector de Salsas para la Venta Final -->
+        <div id="sauces-section" class="space-y-3 border-t border-brand-border pt-5 hidden">
+          <div class="flex items-center justify-between">
+            <h4 class="font-bold text-sm uppercase tracking-wider text-brand-red">Salsas para tu Pedido</h4>
+            <span class="text-[11px] text-zinc-400">Incluidas y extras</span>
+          </div>
+          <div id="sauces-list" class="space-y-2">
+            <!-- Generado por JS -->
+          </div>
         </div>
 
-        <!-- Formulario de Toma de Pedido (visible si hay items) -->
         <form id="checkout-form" onsubmit="submitOrder(event)" class="space-y-4 border-t border-brand-border pt-5 hidden">
           <h4 class="font-bold text-sm uppercase tracking-wider text-brand-red">1. Modalidad de Entrega</h4>
           
@@ -573,7 +586,6 @@
             </div>
           </div>
 
-          <!-- Dirección condicional para Despacho -->
           <div id="address-field-wrapper" class="hidden">
             <label class="block text-xs font-semibold text-zinc-400 mb-1">Dirección de Despacho (Villa / Calle / N°) *</label>
             <input
@@ -585,7 +597,6 @@
             <p class="text-[11px] text-amber-400 mt-1">* Valor de despacho sujeto a confirmación según sector de Conchalí.</p>
           </div>
 
-          <!-- Método de Pago -->
           <div>
             <label class="block text-xs font-semibold text-zinc-400 mb-1">Método de Pago *</label>
             <select
@@ -598,13 +609,12 @@
             </select>
           </div>
 
-          <!-- Comentarios -->
           <div>
-            <label class="block text-xs font-semibold text-zinc-400 mb-1">Notas o Salsas (Soya, Teriyaki, Jengibre, Palitos)</label>
+            <label class="block text-xs font-semibold text-zinc-400 mb-1">Notas Adicionales o Palitos</label>
             <textarea
               id="order-notes"
               rows="2"
-              placeholder="Ej: 2 palitos, soya dulce y sin cebollín en el tempura..."
+              placeholder="Ej: 2 palitos, sin cebollín en el tempura..."
               class="w-full bg-brand-black border border-brand-border focus:border-brand-red rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none"
             ></textarea>
           </div>
@@ -612,15 +622,19 @@
           <!-- Resumen Total -->
           <div class="bg-brand-black border border-brand-border rounded-2xl p-4 space-y-2">
             <div class="flex justify-between text-sm text-zinc-400">
-              <span>Subtotal Productos</span>
+              <span>Subtotal Sushi & Tablas</span>
               <span id="cart-subtotal">$0</span>
+            </div>
+            <div class="flex justify-between text-sm text-zinc-400">
+              <span>Salsas Adicionales</span>
+              <span id="cart-sauces-total">$0</span>
             </div>
             <div class="flex justify-between text-xs text-zinc-500">
               <span>Costo Despacho</span>
               <span id="cart-delivery-note">Retiro Gratis</span>
             </div>
             <div class="flex justify-between text-lg font-black text-white border-t border-zinc-800 pt-2">
-              <span>Total Estimado</span>
+              <span>Total Venta</span>
               <span id="cart-total" class="text-brand-red">$0</span>
             </div>
           </div>
@@ -650,7 +664,7 @@
         Tu orden <span id="success-order-id" class="font-bold text-brand-red">#SC-000</span> quedó guardada en nuestro sistema. Haz clic abajo para enviarla directo al WhatsApp de <strong>SushiChin</strong> y comenzar a prepararla.
       </p>
 
-      <div class="bg-brand-black border border-brand-border rounded-xl p-3 text-left text-xs text-zinc-300 max-h-40 overflow-y-auto whitespace-pre-line" id="success-whatsapp-preview"></div>
+      <div class="bg-brand-black border border-brand-border rounded-xl p-3 text-left text-xs text-zinc-300 max-h-44 overflow-y-auto whitespace-pre-line" id="success-whatsapp-preview"></div>
 
       <div class="flex flex-col gap-2.5 pt-2">
         <a
@@ -706,7 +720,6 @@
   <div id="admin-panel-modal" class="fixed inset-0 z-50 hidden bg-brand-black/95 backdrop-blur-md overflow-y-auto">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-6">
       
-      <!-- Header Panel Admin -->
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-brand-card border border-brand-border p-5 rounded-3xl">
         <div>
           <div class="flex items-center gap-2">
@@ -724,7 +737,6 @@
         </button>
       </div>
 
-      <!-- Pestañas del Administrador -->
       <div class="flex flex-wrap gap-2 border-b border-brand-border pb-4">
         <button
           id="tab-btn-stock"
@@ -765,9 +777,7 @@
           />
         </div>
 
-        <div id="admin-stock-list" class="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <!-- Renderizado por JS -->
-        </div>
+        <div id="admin-stock-list" class="grid grid-cols-1 md:grid-cols-2 gap-3"></div>
       </div>
 
       <!-- PESTAÑA B: REGISTRO DE PEDIDOS -->
@@ -795,9 +805,7 @@
           </div>
         </div>
 
-        <div id="admin-orders-list" class="space-y-4">
-          <!-- Renderizado por JS -->
-        </div>
+        <div id="admin-orders-list" class="space-y-4"></div>
       </div>
 
       <!-- PESTAÑA C: AGREGAR NUEVO PRODUCTO -->
@@ -848,34 +856,1095 @@
 
   <!-- ==================== LÓGICA JAVASCRIPT ==================== -->
   <script>
-    // Configuración del local
     const STORE_WHATSAPP = '56932291414';
     const ADMIN_PIN = '1234';
     const STORAGE_KEYS = {
-      PRODUCTS: 'sushichin_products_v1',
-      ORDERS: 'sushichin_orders_v1',
-      CART: 'sushichin_cart_v1'
+      PRODUCTS: 'sushichin_products_v2',
+      ORDERS: 'sushichin_orders_v2',
+      CART: 'sushichin_cart_v2',
+      SAUCES: 'sushichin_sauces_v2'
     };
-// ... existing code ... -->
-    // Renderizar lista de stock rápido de 1 clic + edición de precio
+
+    const CATEGORIES = [
+      'Todos',
+      'Promociones / Tablas',
+      'Rolls Tempura / Calientes',
+      'Rolls Envueltos',
+      'Hand Rolls & Gohan',
+      'Bebidas y Extras'
+    ];
+
+    // Variantes disponibles para cambiar un tipo de sushi dentro de tablas (con ajuste de precio)
+    const ROLL_REPLACEMENT_OPTIONS = [
+      { id: 'kani-base', label: 'Kanikama Palta Queso (Base)', deltaPrice: 0 },
+      { id: 'pollo-teriyaki', label: 'Pollo Teriyaki Ciboulette', deltaPrice: 500 },
+      { id: 'pollo-panko', label: 'Pollo Panko Queso', deltaPrice: 600 },
+      { id: 'camaron-furai', label: 'Camarón Furai Queso', deltaPrice: 900 },
+      { id: 'salmon-palta', label: 'Salmón Palta Queso', deltaPrice: 1100 },
+      { id: 'salmon-tempura', label: 'Salmón Tempura Caliente', deltaPrice: 1200 }
+    ];
+
+    // Salsas disponibles para la venta final (incluidas $0 y adicionales con precio)
+    const AVAILABLE_SAUCES = [
+      { id: 'soya-cortesia', name: 'Soya Tradicional (Cortesía)', price: 0, included: true },
+      { id: 'teriyaki-cortesia', name: 'Salsa Teriyaki Dulce (Cortesía)', price: 0, included: true },
+      { id: 'soya-extra', name: 'Soya Extra (Potecito)', price: 500, included: false },
+      { id: 'teriyaki-extra', name: 'Teriyaki Extra (Potecito)', price: 600, included: false },
+      { id: 'spicy-mayo', name: 'Spicy Mayo Picante', price: 700, included: false },
+      { id: 'acevichada-extra', name: 'Salsa Acevichada Especial', price: 800, included: false }
+    ];
+
+    const DEFAULT_PRODUCTS = [
+      // Promociones / Tablas personalizables (cambio de roll + ajuste de precio)
+      {
+        id: 'promo-estrella-30',
+        name: 'Tabla Estrella SushiChin (30 cortes)',
+        category: 'Promociones / Tablas',
+        price: 14990,
+        description: '10 Kanikama Palta Queso, 10 Camarón Furai y 10 Pollo Teriyaki. Cambia cualquier roll por pollo, camarón o salmón.',
+        image: 'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=800&q=80',
+        soldOut: false,
+        badge: 'Promo Estrella',
+        customizable: true,
+        defaultSlots: [
+          { label: 'Roll 1 (10 cortes)', optionId: 'kani-base' },
+          { label: 'Roll 2 (10 cortes)', optionId: 'camaron-furai' },
+          { label: 'Roll 3 (10 cortes)', optionId: 'pollo-teriyaki' }
+        ]
+      },
+      {
+        id: 'promo-bandurrias-40',
+        name: 'Tabla Las Bandurrias (40 cortes)',
+        category: 'Promociones / Tablas',
+        price: 19990,
+        description: '4 variedades de 10 cortes con opción de cambiar cada roll y ajustar el precio según tu elección.',
+        image: 'https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?auto=format&fit=crop&w=800&q=80',
+        soldOut: false,
+        badge: 'Más Vendida',
+        customizable: true,
+        defaultSlots: [
+          { label: 'Roll 1 (10 cortes)', optionId: 'kani-base' },
+          { label: 'Roll 2 (10 cortes)', optionId: 'pollo-teriyaki' },
+          { label: 'Roll 3 (10 cortes)', optionId: 'camaron-furai' },
+          { label: 'Roll 4 (10 cortes)', optionId: 'salmon-palta' }
+        ]
+      },
+      {
+        id: 'promo-conchali-60',
+        name: 'Tabla Familiar Conchalí (60 cortes)',
+        category: 'Promociones / Tablas',
+        price: 28990,
+        description: '6 variedades de 10 cortes personalizables al instante para compartir en casa.',
+        image: 'https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=800&q=80',
+        soldOut: false,
+        badge: 'Familiar',
+        customizable: true,
+        defaultSlots: [
+          { label: 'Roll 1 (10 cortes)', optionId: 'kani-base' },
+          { label: 'Roll 2 (10 cortes)', optionId: 'kani-base' },
+          { label: 'Roll 3 (10 cortes)', optionId: 'pollo-teriyaki' },
+          { label: 'Roll 4 (10 cortes)', optionId: 'pollo-panko' },
+          { label: 'Roll 5 (10 cortes)', optionId: 'camaron-furai' },
+          { label: 'Roll 6 (10 cortes)', optionId: 'salmon-tempura' }
+        ]
+      },
+
+      // Rolls Tempura / Calientes
+      {
+        id: 'hot-salmon-tempura',
+        name: 'Salmón Tempura (10 cortes)',
+        category: 'Rolls Tempura / Calientes',
+        price: 6490,
+        description: 'Salmón fresco, palta y queso crema envueltos en masa tempura crujiente dorada al instante.',
+        image: 'https://images.unsplash.com/photo-1611143669185-af224c5e3252?auto=format&fit=crop&w=800&q=80',
+        soldOut: false,
+        badge: 'Caliente'
+      },
+      {
+        id: 'hot-camaron-furai',
+        name: 'Camarón Furai Cheese (10 cortes)',
+        category: 'Rolls Tempura / Calientes',
+        price: 6290,
+        description: 'Camarón apanado en panko, queso crema y cebollín, frito en tempura suave.',
+        image: 'https://images.unsplash.com/photo-1563612116625-3012372fccce?auto=format&fit=crop&w=800&q=80',
+        soldOut: false
+      },
+      {
+        id: 'hot-pollo-teriyaki',
+        name: 'Tori Teriyaki Panko (10 cortes)',
+        category: 'Rolls Tempura / Calientes',
+        price: 5790,
+        description: 'Pollo teriyaki, palta y queso crema en cobertura crujiente con toque dulce de la casa.',
+        image: 'https://images.unsplash.com/photo-1583623025817-d180a2221d0a?auto=format&fit=crop&w=800&q=80',
+        soldOut: false
+      },
+
+      // Rolls Envueltos
+      {
+        id: 'wrap-palta-salmon',
+        name: 'Avocado Roll Salmón (10 cortes)',
+        category: 'Rolls Envueltos',
+        price: 6590,
+        description: 'Envuelto en láminas de palta hass fresca con relleno de salmón y queso crema.',
+        image: 'https://images.unsplash.com/photo-1559410505-0ef20349a2ad?auto=format&fit=crop&w=800&q=80',
+        soldOut: false,
+        badge: 'Fresco'
+      },
+      {
+        id: 'wrap-sesamo-camaron',
+        name: 'California Camarón Sésamo (10 cortes)',
+        category: 'Rolls Envueltos',
+        price: 5690,
+        description: 'Camarón cocido, palta y queso crema cubiertos con semillas de sésamo tostado.',
+        image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80',
+        soldOut: false
+      },
+      {
+        id: 'wrap-ciboulette-kani',
+        name: 'Kani Ciboulette Roll (10 cortes)',
+        category: 'Rolls Envueltos',
+        price: 5290,
+        description: 'Kanikama, palta y queso crema envueltos en ciboulette fresco picado fino.',
+        image: 'https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?auto=format&fit=crop&w=800&q=80',
+        soldOut: false
+      },
+
+      // Hand Rolls & Gohan
+      {
+        id: 'hand-salmon-palta',
+        name: 'Hand Roll Salmón Palta Queso',
+        category: 'Hand Rolls & Gohan',
+        price: 4290,
+        description: 'Cono de alga nori crujiente relleno de arroz avinagrado, salmón fresco, palta y queso crema.',
+        image: 'https://images.unsplash.com/photo-1615361200141-f45040f367be?auto=format&fit=crop&w=800&q=80',
+        soldOut: false
+      },
+      {
+        id: 'hand-camaron-tempura',
+        name: 'Hand Roll Camarón Tempura',
+        category: 'Hand Rolls & Gohan',
+        price: 4190,
+        description: 'Camarón furai caliente, palta, queso crema y ciboulette en cono recién armado.',
+        image: 'https://images.unsplash.com/photo-1562802378-063ec186a863?auto=format&fit=crop&w=800&q=80',
+        soldOut: false
+      },
+      {
+        id: 'gohan-sushichin',
+        name: 'Gohan Especial SushiChin',
+        category: 'Hand Rolls & Gohan',
+        price: 6990,
+        description: 'Base de arroz de sushi con salmón, camarón, palta, queso crema, sésamo y salsa teriyaki.',
+        image: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=800&q=80',
+        soldOut: false,
+        badge: 'Abundante'
+      },
+
+      // Bebidas y Extras
+      {
+        id: 'extra-gyozas-5',
+        name: 'Gyozas de Cerdo y Verduras (5 un.)',
+        category: 'Bebidas y Extras',
+        price: 3890,
+        description: 'Empanaditas japonesas doradas a la plancha con salsa soya oriental.',
+        image: 'https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&w=800&q=80',
+        soldOut: false
+      },
+      {
+        id: 'bebida-lata-350',
+        name: 'Bebida en Lata 350ml',
+        category: 'Bebidas y Extras',
+        price: 1390,
+        description: 'Coca-Cola, Coca-Cola Zero, Fanta o Sprite bien helada.',
+        image: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=800&q=80',
+        soldOut: false
+      },
+      {
+        id: 'extra-salsas-pack',
+        name: 'Pack Salsas Extra (Soya + Teriyaki)',
+        category: 'Bebidas y Extras',
+        price: 1200,
+        description: 'Porciones extra de salsa soya y salsa teriyaki dulce.',
+        image: 'https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=800&q=80',
+        soldOut: false
+      }
+    ];
+
+    let selectedCategory = 'Todos';
+    let products = loadProducts();
+    let cart = loadCart();
+    let orders = loadOrders();
+    let selectedSauces = loadSauces();
+    let customizingProductId = null;
+
+    function formatCLP(amount) {
+      return '$' + Number(amount || 0).toLocaleString('es-CL');
+    }
+
+    function formatDelta(delta) {
+      const n = Number(delta || 0);
+      if (n === 0) return '$0';
+      return n > 0 ? `+${formatCLP(n)}` : `-${formatCLP(Math.abs(n))}`;
+    }
+
+    function escapeHTML(str) {
+      return String(str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function loadProducts() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEYS.PRODUCTS);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+        }
+      } catch (e) {}
+      return DEFAULT_PRODUCTS.map(p => ({ ...p }));
+    }
+
+    function saveProducts() {
+      try {
+        localStorage.setItem(STORAGE_KEYS.PRODUCTS, JSON.stringify(products));
+      } catch (e) {}
+    }
+
+    function loadCart() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEYS.CART);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (Array.isArray(parsed)) return parsed;
+        }
+      } catch (e) {}
+      return [];
+    }
+
+    function saveCart() {
+      try {
+        localStorage.setItem(STORAGE_KEYS.CART, JSON.stringify(cart));
+      } catch (e) {}
+    }
+
+    function loadSauces() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEYS.SAUCES);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') return parsed;
+        }
+      } catch (e) {}
+      return {};
+    }
+
+    function saveSauces() {
+      try {
+        localStorage.setItem(STORAGE_KEYS.SAUCES, JSON.stringify(selectedSauces));
+      } catch (e) {}
+    }
+
+    function loadOrders() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEYS.ORDERS);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (Array.isArray(parsed)) return parsed;
+        }
+      } catch (e) {}
+      return [];
+    }
+
+    function saveOrders() {
+      try {
+        localStorage.setItem(STORAGE_KEYS.ORDERS, JSON.stringify(orders));
+      } catch (e) {}
+    }
+
+    function showToast(message, type = 'success') {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      const isError = type === 'error';
+      toast.className = `pointer-events-auto px-4 py-3 rounded-2xl border shadow-xl text-xs sm:text-sm font-bold flex items-center gap-2.5 transition-all ${
+        isError
+          ? 'bg-red-950/95 border-brand-red text-white'
+          : 'bg-zinc-900/95 border-emerald-500/50 text-emerald-300'
+      }`;
+      toast.innerHTML = `
+        <span>${isError ? '⚠️' : '✓'}</span>
+        <span>${escapeHTML(message)}</span>
+      `;
+      container.appendChild(toast);
+
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(-8px)';
+        setTimeout(() => toast.remove(), 250);
+      }, 2800);
+    }
+
+    // ==================== CARTA Y FILTROS ====================
+    function renderCategoryTabs() {
+      const container = document.getElementById('category-tabs');
+      container.innerHTML = CATEGORIES.map(cat => {
+        const active = cat === selectedCategory;
+        return `
+          <button
+            type="button"
+            onclick="selectCategory('${escapeHTML(cat)}')"
+            class="shrink-0 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+              active
+                ? 'bg-brand-red text-white shadow-lg shadow-brand-red/25'
+                : 'bg-brand-card text-zinc-300 hover:text-white border border-brand-border hover:border-zinc-700'
+            }"
+          >
+            ${escapeHTML(cat)}
+          </button>
+        `;
+      }).join('');
+    }
+
+    function selectCategory(cat) {
+      selectedCategory = cat;
+      renderCategoryTabs();
+      renderMenu();
+    }
+
+    function renderMenu() {
+      const grid = document.getElementById('menu-grid');
+      const query = (document.getElementById('search-input')?.value || '').toLowerCase().trim();
+
+      const filtered = products.filter(p => {
+        const matchesCat = selectedCategory === 'Todos' || p.category === selectedCategory;
+        const matchesQuery =
+          !query ||
+          p.name.toLowerCase().includes(query) ||
+          p.description.toLowerCase().includes(query) ||
+          p.category.toLowerCase().includes(query);
+        return matchesCat && matchesQuery;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full bg-brand-card border border-brand-border rounded-3xl p-10 text-center space-y-3">
+            <p class="text-2xl">🥢</p>
+            <h3 class="font-display font-bold text-lg text-white">No encontramos productos con ese filtro</h3>
+            <p class="text-sm text-zinc-400">Prueba limpiando la búsqueda o seleccionando otra categoría.</p>
+            <button
+              type="button"
+              onclick="resetMenuFilters()"
+              class="mt-2 bg-brand-red hover:bg-brand-redDark text-white text-xs font-bold px-5 py-2.5 rounded-xl transition-all"
+            >
+              Ver Toda la Carta
+            </button>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(prod => {
+        const isSoldOut = prod.soldOut === true;
+        const fallbackImg = `https://placehold.co/800x500/141414/E51A1A?text=${encodeURIComponent(prod.name)}`;
+        const imgSrc = prod.image && prod.image.trim() ? prod.image.trim() : fallbackImg;
+
+        return `
+          <article class="bg-brand-card border ${isSoldOut ? 'border-zinc-800 opacity-80' : 'border-brand-border hover:border-brand-red/60'} rounded-3xl overflow-hidden flex flex-col justify-between transition-all shadow-lg group">
+            <div>
+              <div class="relative aspect-[16/10] bg-zinc-900 overflow-hidden">
+                <img
+                  src="${escapeHTML(imgSrc)}"
+                  onerror="this.src='${fallbackImg}'"
+                  alt="${escapeHTML(prod.name)}"
+                  loading="lazy"
+                  class="w-full h-full object-cover transition-transform duration-500 ${isSoldOut ? 'grayscale' : 'group-hover:scale-105'}"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-black/30"></div>
+
+                <span class="absolute top-3 left-3 bg-brand-black/85 backdrop-blur-sm border border-zinc-700/80 text-zinc-200 text-[11px] font-bold px-2.5 py-1 rounded-full">
+                  ${escapeHTML(prod.category)}
+                </span>
+
+                ${
+                  isSoldOut
+                    ? `<span class="absolute top-3 right-3 bg-brand-red text-white text-[11px] font-black px-3 py-1 rounded-full uppercase tracking-wider shadow">Agotado</span>`
+                    : prod.badge
+                    ? `<span class="absolute top-3 right-3 bg-brand-red text-white text-[11px] font-black px-3 py-1 rounded-full uppercase tracking-wider shadow">${escapeHTML(prod.badge)}</span>`
+                    : ''
+                }
+              </div>
+
+              <div class="p-5 space-y-2">
+                <div class="flex items-start justify-between gap-3">
+                  <h3 class="font-display font-extrabold text-base sm:text-lg text-white leading-snug">
+                    ${escapeHTML(prod.name)}
+                  </h3>
+                  <span class="font-display font-black text-lg sm:text-xl text-brand-red shrink-0">
+                    ${formatCLP(prod.price)}
+                  </span>
+                </div>
+                <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                  ${escapeHTML(prod.description)}
+                </p>
+              </div>
+            </div>
+
+            <div class="px-5 pb-5 pt-2 space-y-2">
+              ${
+                isSoldOut
+                  ? `<button
+                      type="button"
+                      disabled
+                      class="w-full py-3 rounded-xl bg-zinc-800 text-zinc-500 font-bold text-xs uppercase tracking-wider cursor-not-allowed"
+                    >
+                      Sin Stock por Hoy
+                    </button>`
+                  : prod.customizable
+                  ? `<div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      <button
+                        type="button"
+                        onclick="openCustomizeModal('${prod.id}')"
+                        class="w-full py-3 px-3 rounded-xl bg-amber-500/15 hover:bg-amber-500/25 border border-amber-400/50 text-amber-300 font-extrabold text-xs transition-all flex items-center justify-center gap-1.5"
+                      >
+                        <span>🔄 Cambiar Rolls</span>
+                      </button>
+                      <button
+                        type="button"
+                        onclick="addToCart('${prod.id}')"
+                        class="w-full py-3 px-3 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-extrabold text-xs transition-all shadow-lg shadow-brand-red/20 active:scale-[0.99] flex items-center justify-center gap-1.5"
+                      >
+                        <span>Pedir Tal Cual</span>
+                        <span>+</span>
+                      </button>
+                    </div>`
+                  : `<button
+                      type="button"
+                      onclick="addToCart('${prod.id}')"
+                      class="w-full py-3 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-extrabold text-sm transition-all shadow-lg shadow-brand-red/20 active:scale-[0.99] flex items-center justify-center gap-2"
+                    >
+                      <span>Agregar al Pedido</span>
+                      <span>+</span>
+                    </button>`
+              }
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    function resetMenuFilters() {
+      selectedCategory = 'Todos';
+      const searchEl = document.getElementById('search-input');
+      if (searchEl) searchEl.value = '';
+      renderCategoryTabs();
+      renderMenu();
+    }
+
+    // ==================== PERSONALIZAR TABLA (CAMBIO DE ROLLS + PRECIO) ====================
+    function openCustomizeModal(productId) {
+      const prod = products.find(p => p.id === productId);
+      if (!prod || prod.soldOut) return;
+
+      customizingProductId = productId;
+      const slots = Array.isArray(prod.defaultSlots) && prod.defaultSlots.length > 0
+        ? prod.defaultSlots
+        : [
+            { label: 'Roll 1 (10 cortes)', optionId: 'kani-base' },
+            { label: 'Roll 2 (10 cortes)', optionId: 'pollo-teriyaki' }
+          ];
+
+      document.getElementById('custom-modal-title').textContent = prod.name;
+      const container = document.getElementById('custom-slots-container');
+
+      container.innerHTML = slots.map((slot, idx) => {
+        const optionsHtml = ROLL_REPLACEMENT_OPTIONS.map(opt => {
+          const selected = opt.optionId === slot.optionId;
+          const priceLabel = opt.deltaPrice === 0 ? 'Sin recargo' : `${formatDelta(opt.deltaPrice)}`;
+          return `<option value="${opt.id}" ${selected ? 'selected' : ''}>${escapeHTML(opt.label)} (${priceLabel})</option>`;
+        }).join('');
+
+        return `
+          <div class="bg-brand-black border border-brand-border rounded-2xl p-4 space-y-2">
+            <div class="flex items-center justify-between gap-2">
+              <label for="slot-select-${idx}" class="text-xs font-extrabold uppercase tracking-wider text-zinc-300">
+                ${escapeHTML(slot.label)}
+              </label>
+              <span id="slot-delta-${idx}" class="text-xs font-black text-amber-400">$0</span>
+            </div>
+            <select
+              id="slot-select-${idx}"
+              data-slot-label="${escapeHTML(slot.label)}"
+              onchange="recalculateCustomizedPrice()"
+              class="w-full bg-brand-card border border-brand-border focus:border-brand-red rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none"
+            >
+              ${optionsHtml}
+            </select>
+          </div>
+        `;
+      }).join('');
+
+      recalculateCustomizedPrice();
+      document.getElementById('customize-modal').classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeCustomizeModal() {
+      customizingProductId = null;
+      document.getElementById('customize-modal').classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    function recalculateCustomizedPrice() {
+      const prod = products.find(p => p.id === customizingProductId);
+      if (!prod) return;
+
+      const selects = document.querySelectorAll('#custom-slots-container select');
+      let totalDelta = 0;
+
+      selects.forEach((sel, idx) => {
+        const opt = ROLL_REPLACEMENT_OPTIONS.find(o => o.id === sel.value) || ROLL_REPLACEMENT_OPTIONS[0];
+        totalDelta += opt.deltaPrice;
+        const badge = document.getElementById(`slot-delta-${idx}`);
+        if (badge) {
+          badge.textContent = formatDelta(opt.deltaPrice);
+          badge.className = `text-xs font-black ${opt.deltaPrice > 0 ? 'text-amber-400' : 'text-zinc-400'}`;
+        }
+      });
+
+      const finalPrice = prod.price + totalDelta;
+      document.getElementById('custom-base-price').textContent = formatCLP(prod.price);
+      document.getElementById('custom-delta-price').textContent = formatDelta(totalDelta);
+      document.getElementById('custom-final-price').textContent = formatCLP(finalPrice);
+    }
+
+    function confirmCustomizedProduct() {
+      const prod = products.find(p => p.id === customizingProductId);
+      if (!prod) return;
+
+      const selects = document.querySelectorAll('#custom-slots-container select');
+      const chosenSlots = [];
+      let totalDelta = 0;
+
+      selects.forEach(sel => {
+        const opt = ROLL_REPLACEMENT_OPTIONS.find(o => o.id === sel.value) || ROLL_REPLACEMENT_OPTIONS[0];
+        totalDelta += opt.deltaPrice;
+        chosenSlots.push({
+          slotLabel: sel.dataset.slotLabel,
+          optionId: opt.id,
+          optionLabel: opt.label,
+          deltaPrice: opt.deltaPrice
+        });
+      });
+
+      const finalPrice = prod.price + totalDelta;
+      const configSignature = chosenSlots.map(s => `${s.slotLabel}:${s.optionId}`).join('|');
+      const cartKey = `${prod.id}__${configSignature}`;
+      const summaryText = chosenSlots.map(s => `${s.slotLabel}: ${s.optionLabel}`).join(' • ');
+
+      const existing = cart.find(item => item.cartKey === cartKey);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({
+          id: prod.id,
+          cartKey,
+          name: prod.name,
+          price: finalPrice,
+          basePrice: prod.price,
+          customSummary: summaryText,
+          qty: 1
+        });
+      }
+
+      saveCart();
+      updateCartBadges();
+      renderCart();
+      closeCustomizeModal();
+      showToast(`Tabla agregada (${formatCLP(finalPrice)})`);
+    }
+
+    // ==================== CARRITO, SALSAS Y CHECKOUT ====================
+    function toggleCart(open) {
+      const drawer = document.getElementById('cart-drawer');
+      if (open) {
+        drawer.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+        renderCart();
+      } else {
+        drawer.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
+    }
+
+    function addToCart(productId) {
+      const prod = products.find(p => p.id === productId);
+      if (!prod) return;
+      if (prod.soldOut) {
+        showToast(`${prod.name} está agotado por hoy.`, 'error');
+        return;
+      }
+
+      const existing = cart.find(item => item.cartKey === productId);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({
+          id: prod.id,
+          cartKey: prod.id,
+          name: prod.name,
+          price: prod.price,
+          basePrice: prod.price,
+          customSummary: '',
+          qty: 1
+        });
+      }
+
+      saveCart();
+      updateCartBadges();
+      renderCart();
+      showToast(`Agregado: ${prod.name}`);
+    }
+
+    function updateCartQty(cartKey, delta) {
+      const idx = cart.findIndex(item => item.cartKey === cartKey);
+      if (idx === -1) return;
+
+      cart[idx].qty += delta;
+      if (cart[idx].qty <= 0) {
+        cart.splice(idx, 1);
+      }
+
+      saveCart();
+      updateCartBadges();
+      renderCart();
+    }
+
+    function updateSauceQty(sauceId, delta) {
+      const current = Number(selectedSauces[sauceId] || 0);
+      const next = Math.max(0, current + delta);
+      if (next === 0) {
+        delete selectedSauces[sauceId];
+      } else {
+        selectedSauces[sauceId] = next;
+      }
+      saveSauces();
+      renderSaucesSelector();
+      updateCartTotalsDisplay();
+      updateCartBadges();
+    }
+
+    function getCartProductsSubtotal() {
+      return cart.reduce((sum, item) => {
+        const currentProd = products.find(p => p.id === item.id);
+        const isCustomized = Boolean(item.customSummary);
+        const unitPrice = isCustomized
+          ? item.price
+          : currentProd
+          ? currentProd.price
+          : item.price;
+        return sum + unitPrice * item.qty;
+      }, 0);
+    }
+
+    function getSaucesSubtotal() {
+      return AVAILABLE_SAUCES.reduce((sum, sauce) => {
+        const qty = Number(selectedSauces[sauce.id] || 0);
+        return sum + sauce.price * qty;
+      }, 0);
+    }
+
+    function getCartGrandTotal() {
+      return getCartProductsSubtotal() + getSaucesSubtotal();
+    }
+
+    function getCartTotalItems() {
+      const itemsQty = cart.reduce((sum, item) => sum + item.qty, 0);
+      const saucesQty = Object.values(selectedSauces).reduce((sum, q) => sum + Number(q || 0), 0);
+      return itemsQty + saucesQty;
+    }
+
+    function updateCartBadges() {
+      const count = getCartTotalItems();
+      const total = getCartGrandTotal();
+
+      const badge = document.getElementById('cart-badge');
+      if (badge) badge.textContent = count;
+
+      const mobileBar = document.getElementById('mobile-floating-bar');
+      const mobileCount = document.getElementById('mobile-cart-count');
+      const mobileTotal = document.getElementById('mobile-cart-total');
+
+      if (mobileBar && mobileCount && mobileTotal) {
+        if (count > 0) {
+          mobileBar.classList.remove('hidden');
+          mobileCount.textContent = count;
+          mobileTotal.textContent = formatCLP(total);
+        } else {
+          mobileBar.classList.add('hidden');
+        }
+      }
+    }
+
+    function renderSaucesSelector() {
+      const container = document.getElementById('sauces-list');
+      if (!container) return;
+
+      container.innerHTML = AVAILABLE_SAUCES.map(sauce => {
+        const qty = Number(selectedSauces[sauce.id] || 0);
+        const priceLabel = sauce.price === 0 ? 'Incluida ($0)' : formatCLP(sauce.price);
+
+        return `
+          <div class="flex items-center justify-between gap-3 bg-brand-black border ${qty > 0 ? 'border-brand-red/60' : 'border-brand-border'} rounded-xl px-3.5 py-2.5">
+            <div class="min-w-0">
+              <p class="text-xs sm:text-sm font-bold text-white truncate">${escapeHTML(sauce.name)}</p>
+              <p class="text-[11px] ${sauce.price > 0 ? 'text-amber-400 font-bold' : 'text-emerald-400'}">${priceLabel}</p>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <button
+                type="button"
+                onclick="updateSauceQty('${sauce.id}', -1)"
+                class="w-7 h-7 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-white font-black text-xs flex items-center justify-center"
+              >−</button>
+              <span class="w-5 text-center font-extrabold text-xs">${qty}</span>
+              <button
+                type="button"
+                onclick="updateSauceQty('${sauce.id}', 1)"
+                class="w-7 h-7 rounded-lg bg-brand-red hover:bg-brand-redDark text-white font-black text-xs flex items-center justify-center"
+              >+</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function updateCartTotalsDisplay() {
+      const subtotal = getCartProductsSubtotal();
+      const saucesTotal = getSaucesSubtotal();
+      const grandTotal = subtotal + saucesTotal;
+
+      const elSub = document.getElementById('cart-subtotal');
+      const elSauces = document.getElementById('cart-sauces-total');
+      const elTotal = document.getElementById('cart-total');
+
+      if (elSub) elSub.textContent = formatCLP(subtotal);
+      if (elSauces) elSauces.textContent = formatCLP(saucesTotal);
+      if (elTotal) elTotal.textContent = formatCLP(grandTotal);
+    }
+
+    function handleDeliveryChange() {
+      const selected = document.querySelector('input[name="deliveryType"]:checked')?.value || 'Retiro en Local';
+      const addressWrapper = document.getElementById('address-field-wrapper');
+      const addressInput = document.getElementById('customer-address');
+      const deliveryNote = document.getElementById('cart-delivery-note');
+
+      if (selected === 'Despacho a Domicilio') {
+        addressWrapper.classList.remove('hidden');
+        addressInput.required = true;
+        if (deliveryNote) deliveryNote.textContent = 'Por confirmar (Conchalí / Bandurrias)';
+      } else {
+        addressWrapper.classList.add('hidden');
+        addressInput.required = false;
+        if (deliveryNote) deliveryNote.textContent = 'Retiro Gratis';
+      }
+    }
+
+    function renderCart() {
+      const container = document.getElementById('cart-items-container');
+      const saucesSection = document.getElementById('sauces-section');
+      const form = document.getElementById('checkout-form');
+
+      if (cart.length === 0) {
+        saucesSection.classList.add('hidden');
+        form.classList.add('hidden');
+        container.innerHTML = `
+          <div class="text-center py-12 space-y-3">
+            <p class="text-4xl">🍣</p>
+            <h4 class="font-display font-bold text-lg text-white">Tu pedido está vacío</h4>
+            <p class="text-xs text-zinc-400 max-w-xs mx-auto">Explora la carta, personaliza rolls en tablas o agrega tus salsas favoritas.</p>
+            <button
+              type="button"
+              onclick="toggleCart(false); document.getElementById('carta').scrollIntoView({behavior:'smooth'});"
+              class="mt-2 bg-brand-red hover:bg-brand-redDark text-white text-xs font-bold px-5 py-2.5 rounded-xl transition-all"
+            >
+              Ir a la Carta
+            </button>
+          </div>
+        `;
+        return;
+      }
+
+      saucesSection.classList.remove('hidden');
+      form.classList.remove('hidden');
+      renderSaucesSelector();
+
+      container.innerHTML = cart.map(item => {
+        const currentProd = products.find(p => p.id === item.id);
+        const isCustomized = Boolean(item.customSummary);
+        const unitPrice = isCustomized
+          ? item.price
+          : currentProd
+          ? currentProd.price
+          : item.price;
+        const lineTotal = unitPrice * item.qty;
+
+        return `
+          <div class="flex items-start justify-between gap-3 bg-brand-black border border-brand-border rounded-2xl p-3.5">
+            <div class="min-w-0 flex-1">
+              <h5 class="font-bold text-sm text-white">${escapeHTML(item.name)}</h5>
+              ${
+                item.customSummary
+                  ? `<p class="text-[11px] text-amber-300 mt-0.5 leading-snug">Cambios: ${escapeHTML(item.customSummary)}</p>`
+                  : ''
+              }
+              <p class="text-xs text-zinc-400 mt-1">${formatCLP(unitPrice)} c/u • <span class="text-brand-red font-bold">${formatCLP(lineTotal)}</span></p>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <button
+                type="button"
+                onclick="updateCartQty('${item.cartKey}', -1)"
+                class="w-8 h-8 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-white font-black text-sm flex items-center justify-center"
+              >−</button>
+              <span class="w-6 text-center font-extrabold text-sm">${item.qty}</span>
+              <button
+                type="button"
+                onclick="updateCartQty('${item.cartKey}', 1)"
+                class="w-8 h-8 rounded-lg bg-brand-red hover:bg-brand-redDark text-white font-black text-sm flex items-center justify-center"
+              >+</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      updateCartTotalsDisplay();
+      handleDeliveryChange();
+    }
+
+    function buildWhatsAppMessage(order) {
+      const lines = [
+        `🥢 *NUEVO PEDIDO SUSHICHIN* (${order.id})`,
+        `📅 Fecha: ${order.createdAt}`,
+        `📦 Modalidad: *${order.deliveryType}*`,
+        `👤 Cliente: ${order.customerName}`,
+        `📞 Teléfono: ${order.customerPhone}`
+      ];
+
+      if (order.deliveryType === 'Despacho a Domicilio' && order.address) {
+        lines.push(`📍 Dirección: ${order.address}`);
+      }
+
+      lines.push(`💳 Pago: ${order.paymentMethod}`);
+      lines.push('');
+      lines.push('*Detalle del Pedido:*');
+
+      order.items.forEach(item => {
+        lines.push(`• ${item.qty}x ${item.name} — ${formatCLP(item.price * item.qty)}`);
+        if (item.customSummary) {
+          lines.push(`   ↳ _${item.customSummary}_`);
+        }
+      });
+
+      if (Array.isArray(order.sauces) && order.sauces.length > 0) {
+        lines.push('');
+        lines.push('*Salsas Seleccionadas:*');
+        order.sauces.forEach(s => {
+          const costText = s.price > 0 ? formatCLP(s.price * s.qty) : 'Incluida';
+          lines.push(`• ${s.qty}x ${s.name} (${costText})`);
+        });
+      }
+
+      lines.push('');
+      lines.push(`💰 *Total Venta:* ${formatCLP(order.total)}`);
+
+      if (order.notes) {
+        lines.push(`📝 *Notas:* ${order.notes}`);
+      }
+
+      return lines.join('\n');
+    }
+
+    function submitOrder(event) {
+      event.preventDefault();
+      if (cart.length === 0) return;
+
+      const deliveryType = document.querySelector('input[name="deliveryType"]:checked')?.value || 'Retiro en Local';
+      const customerName = document.getElementById('customer-name').value.trim();
+      const customerPhone = document.getElementById('customer-phone').value.trim();
+      const address = document.getElementById('customer-address').value.trim();
+      const paymentMethod = document.getElementById('payment-method').value;
+      const notes = document.getElementById('order-notes').value.trim();
+
+      if (!customerName || !customerPhone) {
+        showToast('Completa tu nombre y teléfono.', 'error');
+        return;
+      }
+
+      if (deliveryType === 'Despacho a Domicilio' && !address) {
+        showToast('Ingresa tu dirección para despacho.', 'error');
+        return;
+      }
+
+      const itemsSnapshot = cart.map(item => {
+        const currentProd = products.find(p => p.id === item.id);
+        const isCustomized = Boolean(item.customSummary);
+        const unitPrice = isCustomized
+          ? item.price
+          : currentProd
+          ? currentProd.price
+          : item.price;
+
+        return {
+          id: item.id,
+          name: item.name,
+          price: unitPrice,
+          qty: item.qty,
+          customSummary: item.customSummary || ''
+        };
+      });
+
+      const saucesSnapshot = AVAILABLE_SAUCES
+        .map(sauce => ({
+          id: sauce.id,
+          name: sauce.name,
+          price: sauce.price,
+          qty: Number(selectedSauces[sauce.id] || 0)
+        }))
+        .filter(s => s.qty > 0);
+
+      const itemsTotal = itemsSnapshot.reduce((acc, i) => acc + i.price * i.qty, 0);
+      const saucesTotal = saucesSnapshot.reduce((acc, s) => acc + s.price * s.qty, 0);
+      const total = itemsTotal + saucesTotal;
+
+      const orderNum = String(orders.length + 1).padStart(3, '0');
+      const now = new Date();
+      const formattedDate = now.toLocaleString('es-CL', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+
+      const newOrder = {
+        id: `SC-${orderNum}`,
+        createdAt: formattedDate,
+        deliveryType,
+        customerName,
+        customerPhone,
+        address,
+        paymentMethod,
+        notes,
+        items: itemsSnapshot,
+        sauces: saucesSnapshot,
+        total,
+        status: 'Pendiente'
+      };
+
+      orders.unshift(newOrder);
+      saveOrders();
+
+      const waText = buildWhatsAppMessage(newOrder);
+      const waUrl = `https://wa.me/${STORE_WHATSAPP}?text=${encodeURIComponent(waText)}`;
+
+      document.getElementById('success-order-id').textContent = `#${newOrder.id}`;
+      document.getElementById('success-whatsapp-preview').textContent = waText;
+      document.getElementById('whatsapp-send-link').href = waUrl;
+
+      cart = [];
+      selectedSauces = {};
+      saveCart();
+      saveSauces();
+      updateCartBadges();
+      renderCart();
+      event.target.reset();
+      handleDeliveryChange();
+
+      toggleCart(false);
+      document.getElementById('order-success-modal').classList.remove('hidden');
+      updateAdminOrdersBadge();
+    }
+
+    function closeSuccessModal() {
+      document.getElementById('order-success-modal').classList.add('hidden');
+    }
+
+    // ==================== PANEL ADMINISTRADOR ====================
+    function openAdminAuth() {
+      document.getElementById('admin-pin-input').value = '';
+      document.getElementById('admin-auth-modal').classList.remove('hidden');
+      setTimeout(() => document.getElementById('admin-pin-input').focus(), 50);
+    }
+
+    function closeAdminAuth() {
+      document.getElementById('admin-auth-modal').classList.add('hidden');
+    }
+
+    function verifyAdminPin(event) {
+      event.preventDefault();
+      const pin = document.getElementById('admin-pin-input').value.trim();
+      if (pin === ADMIN_PIN) {
+        closeAdminAuth();
+        openAdminPanel();
+      } else {
+        showToast('PIN incorrecto. Usa 1234 para la demo.', 'error');
+      }
+    }
+
+    function openAdminPanel() {
+      document.getElementById('admin-panel-modal').classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+      updateAdminOrdersBadge();
+      switchAdminTab('stock');
+    }
+
+    function closeAdminPanel() {
+      document.getElementById('admin-panel-modal').classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    function switchAdminTab(tab) {
+      const tabs = ['stock', 'orders', 'add'];
+      tabs.forEach(t => {
+        const panel = document.getElementById(`admin-tab-${t}`);
+        const btn = document.getElementById(`tab-btn-${t}`);
+        if (panel) panel.classList.toggle('hidden', t !== tab);
+        if (btn) {
+          if (t === tab) {
+            btn.className = 'px-5 py-2.5 rounded-xl font-bold text-sm bg-brand-red text-white transition-all flex items-center gap-2';
+          } else {
+            btn.className = 'px-5 py-2.5 rounded-xl font-bold text-sm bg-brand-card text-zinc-300 hover:text-white border border-brand-border transition-all flex items-center gap-2';
+          }
+        }
+      });
+
+      if (tab === 'stock') renderAdminStock();
+      if (tab === 'orders') renderAdminOrders();
+    }
+
+    function updateAdminOrdersBadge() {
+      const badge = document.getElementById('admin-orders-count');
+      if (badge) badge.textContent = orders.length;
+    }
+
     function renderAdminStock() {
       const container = document.getElementById('admin-stock-list');
-      const search = document.getElementById('admin-stock-search').value.toLowerCase().trim();
+      const search = (document.getElementById('admin-stock-search')?.value || '').toLowerCase().trim();
 
-      const filtered = products.filter(p => p.name.toLowerCase().includes(search) || p.category.toLowerCase().includes(search));
+      const filtered = products.filter(
+        p => p.name.toLowerCase().includes(search) || p.category.toLowerCase().includes(search)
+      );
 
       container.innerHTML = filtered.map(prod => {
         const isSoldOut = prod.soldOut === true;
         return `
           <div class="flex items-center justify-between gap-3 bg-brand-card border ${isSoldOut ? 'border-brand-red/50 bg-red-950/15' : 'border-brand-border'} p-4 rounded-2xl transition-all">
             <div class="min-w-0 flex-1">
-              <span class="text-[10px] uppercase font-bold text-zinc-500">${prod.category}</span>
-              <h4 class="font-bold text-sm text-white truncate">${prod.name}</h4>
+              <span class="text-[10px] uppercase font-bold text-zinc-500">${escapeHTML(prod.category)}</span>
+              <h4 class="font-bold text-sm text-white truncate">${escapeHTML(prod.name)}</h4>
               <div class="flex items-center gap-2 mt-1">
                 <span class="text-xs font-extrabold text-brand-red">${formatCLP(prod.price)}</span>
                 <button
                   type="button"
-                  onclick="promptEditPrice('${prod.id}')"
+                  onclick="promptEditPrice(event, '${prod.id}')"
                   class="text-[11px] text-zinc-400 hover:text-white underline"
                 >
                   Editar precio
@@ -883,8 +1952,8 @@
               </div>
             </div>
 
-            <!-- Interruptor Grande 1-Clic -->
             <button
+              type="button"
               onclick="toggleProductSoldOut('${prod.id}')"
               class="shrink-0 flex items-center gap-2.5 px-4 py-2.5 rounded-xl font-black text-xs uppercase tracking-wider transition-all ${
                 isSoldOut
@@ -900,12 +1969,12 @@
       }).join('');
     }
 
-    function promptEditPrice(productId) {
+    function promptEditPrice(ev, productId) {
       const prod = products.find(p => p.id === productId);
       if (!prod) return;
 
-      const card = event.target.closest('div');
-      if (card.querySelector('input')) return;
+      const card = ev.target.closest('div');
+      if (!card || card.querySelector('input')) return;
 
       const originalHTML = card.innerHTML;
       card.innerHTML = `
@@ -925,6 +1994,8 @@
           saveProducts();
           renderAdminStock();
           renderMenu();
+          renderCart();
+          updateCartBadges();
           showToast(`Precio actualizado: ${formatCLP(val)}`);
         } else {
           showToast('Ingresa un precio válido.', 'error');
@@ -937,4 +2008,158 @@
     }
 
     function toggleProductSoldOut(productId) {
-// ... existing code ... -->
+      const prod = products.find(p => p.id === productId);
+      if (!prod) return;
+      prod.soldOut = !prod.soldOut;
+      saveProducts();
+      renderAdminStock();
+      renderMenu();
+      showToast(`${prod.name}: ${prod.soldOut ? 'Marcado como AGOTADO' : 'DISPONIBLE'}`);
+    }
+
+    function renderAdminOrders() {
+      const container = document.getElementById('admin-orders-list');
+      updateAdminOrdersBadge();
+
+      if (orders.length === 0) {
+        container.innerHTML = `
+          <div class="bg-brand-card border border-brand-border rounded-2xl p-8 text-center text-sm text-zinc-400">
+            Aún no hay pedidos registrados en este navegador.
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = orders.map(ord => {
+        const itemsHtml = (ord.items || [])
+          .map(i => `
+            <li class="text-xs text-zinc-300">
+              • ${i.qty}x ${escapeHTML(i.name)} (${formatCLP(i.price * i.qty)})
+              ${i.customSummary ? `<div class="text-[11px] text-amber-300 pl-3">${escapeHTML(i.customSummary)}</div>` : ''}
+            </li>
+          `)
+          .join('');
+
+        const saucesHtml = Array.isArray(ord.sauces) && ord.sauces.length > 0
+          ? `<div class="mt-2 pt-2 border-t border-zinc-800 text-[11px] text-zinc-400">
+               <strong class="text-zinc-200">Salsas:</strong> ${ord.sauces.map(s => `${s.qty}x ${escapeHTML(s.name)}`).join(', ')}
+             </div>`
+          : '';
+
+        return `
+          <div class="bg-brand-card border border-brand-border rounded-2xl p-5 space-y-3">
+            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-zinc-800 pb-3">
+              <div>
+                <span class="font-display font-black text-base text-brand-red">#${escapeHTML(ord.id)}</span>
+                <span class="text-xs text-zinc-400 ml-2">${escapeHTML(ord.createdAt)}</span>
+                <span class="ml-2 text-xs font-bold px-2.5 py-0.5 rounded-full bg-zinc-800 text-zinc-200">${escapeHTML(ord.deliveryType)}</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <select
+                  onchange="updateOrderStatus('${ord.id}', this.value)"
+                  class="bg-brand-black border border-brand-border rounded-xl px-3 py-1.5 text-xs font-bold text-white focus:border-brand-red focus:outline-none"
+                >
+                  <option value="Pendiente" ${ord.status === 'Pendiente' ? 'selected' : ''}>Pendiente</option>
+                  <option value="En preparación" ${ord.status === 'En preparación' ? 'selected' : ''}>En preparación</option>
+                  <option value="En reparto / Listo" ${ord.status === 'En reparto / Listo' ? 'selected' : ''}>En reparto / Listo</option>
+                  <option value="Entregado" ${ord.status === 'Entregado' ? 'selected' : ''}>Entregado</option>
+                </select>
+                <span class="font-display font-black text-base text-white">${formatCLP(ord.total)}</span>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-zinc-300">
+              <div>
+                <p><strong class="text-white">Cliente:</strong> ${escapeHTML(ord.customerName)} (${escapeHTML(ord.customerPhone)})</p>
+                ${ord.address ? `<p><strong class="text-white">Dirección:</strong> ${escapeHTML(ord.address)}</p>` : ''}
+                <p><strong class="text-white">Pago:</strong> ${escapeHTML(ord.paymentMethod)}</p>
+                ${ord.notes ? `<p><strong class="text-white">Notas:</strong> ${escapeHTML(ord.notes)}</p>` : ''}
+              </div>
+              <div class="bg-brand-black/60 p-3 rounded-xl border border-zinc-800/80">
+                <ul class="space-y-1">${itemsHtml}</ul>
+                ${saucesHtml}
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function updateOrderStatus(orderId, status) {
+      const ord = orders.find(o => o.id === orderId);
+      if (!ord) return;
+      ord.status = status;
+      saveOrders();
+      showToast(`Pedido #${orderId} actualizado a: ${status}`);
+    }
+
+    function copyOrdersReport() {
+      if (orders.length === 0) {
+        showToast('No hay pedidos para reportar.', 'error');
+        return;
+      }
+      const totalDay = orders.reduce((acc, o) => acc + (o.total || 0), 0);
+      const reportLines = [
+        `📊 REPORTE SUSHICHIN (${orders.length} pedidos) - Total: ${formatCLP(totalDay)}`,
+        '----------------------------------------'
+      ];
+      orders.forEach(o => {
+        reportLines.push(`#${o.id} | ${o.createdAt} | ${o.customerName} | ${o.deliveryType} | ${o.status} | ${formatCLP(o.total)}`);
+      });
+
+      const text = reportLines.join('\n');
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => showToast('Reporte copiado al portapapeles'));
+      } else {
+        showToast('Reporte listo');
+      }
+    }
+
+    function addNewProduct(event) {
+      event.preventDefault();
+      const name = document.getElementById('new-prod-name').value.trim();
+      const category = document.getElementById('new-prod-category').value;
+      const price = parseInt(document.getElementById('new-prod-price').value, 10);
+      const description = document.getElementById('new-prod-desc').value.trim();
+      const image = document.getElementById('new-prod-img').value.trim();
+
+      if (!name || isNaN(price) || price < 500 || !description) {
+        showToast('Completa todos los campos obligatorios.', 'error');
+        return;
+      }
+
+      const slug = name
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/(^-|-$)/g, '');
+
+      const newProd = {
+        id: `${slug || 'prod'}-${Date.now()}`,
+        name,
+        category,
+        price,
+        description,
+        image: image || 'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=800&q=80',
+        soldOut: false,
+        badge: 'Nuevo'
+      };
+
+      products.unshift(newProd);
+      saveProducts();
+      renderMenu();
+      renderAdminStock();
+      event.target.reset();
+      showToast(`"${name}" agregado a la carta`);
+      switchAdminTab('stock');
+    }
+
+    // Inicialización al cargar
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCategoryTabs();
+      renderMenu();
+      updateCartBadges();
+      updateAdminOrdersBadge();
+    });
+  </script>
+</body>
+</html>
